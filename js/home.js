@@ -1,143 +1,90 @@
 // ========================================
-// データ設定
+// 新デザイン - Home.js
 // ========================================
 
 // データはPHPから渡されます（home.phpで定義）
-// 以下の変数がグローバルスコープで利用可能:
-// - tickerData: Tickerに表示するニュース（お知らせ + テックニュース）
-// - internalNews: お知らせデータ
-// - externalNews: テックニュースデータ
-// - featuredItem: 注目記事データ
+// - announcements: お知らせデータ
+// - latestNews: 最新ニュースデータ
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== HOME.JS START ===');
+
+    // データの存在確認
+    if (typeof announcements !== 'undefined' && typeof latestNews !== 'undefined') {
+        console.log('Data loaded successfully');
+        initNewsLists();
+        initScrollAnimations();
+    } else {
+        console.error('Data not loaded');
+    }
+});
 
 // ========================================
-// News Ticker の初期化
+// ニュースリストの初期化
 // ========================================
 
-function initTicker() {
-    console.log('initTicker called');
-    console.log('  - tickerData:', tickerData);
-    console.log('  - tickerData length:', tickerData ? tickerData.length : 'undefined');
-
-    const tickerTrack = document.getElementById('tickerTrack');
-
-    if (!tickerTrack) {
-        console.error('tickerTrack element not found');
-        return;
+function initNewsLists() {
+    // お知らせリスト
+    const announcementsList = document.getElementById('announcementsList');
+    if (announcementsList && Array.isArray(announcements)) {
+        const publishedAnnouncements = announcements.filter(item => item.published === true);
+        const announcementsHTML = publishedAnnouncements.slice(0, 5).map(item => `
+            <a href="${item.link || '#'}" class="news-item-simple">
+                <div class="news-item-left">
+                    <span class="news-date">${formatDate(item.date)}</span>
+                    <span class="news-category">${item.category}</span>
+                    <span class="news-title-text">${item.title}</span>
+                </div>
+                <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        `).join('');
+        announcementsList.innerHTML = announcementsHTML;
     }
 
-    console.log('  - tickerTrack found:', tickerTrack);
-
-    if (!tickerData || !Array.isArray(tickerData)) {
-        console.error('Invalid tickerData:', tickerData);
-        return;
+    // 最新ニュースリスト
+    const latestNewsList = document.getElementById('latestNewsList');
+    if (latestNewsList && Array.isArray(latestNews)) {
+        const latestNewsHTML = latestNews.slice(0, 5).map(item => `
+            <a href="${item.link || '#'}" class="news-item-simple" target="_blank" rel="noopener noreferrer">
+                <div class="news-item-left">
+                    <span class="news-category">${item.category}</span>
+                    <span class="news-title-text">${item.title}</span>
+                </div>
+                <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        `).join('');
+        latestNewsList.innerHTML = latestNewsHTML;
     }
-
-    // ティッカーアイテムを2回繰り返して無限ループを実現
-    const tickerHTML = tickerData.map((item, index) => {
-        console.log(`  - Ticker item ${index}:`, item);
-        return `
-        <div class="ticker-item">
-            <span class="ticker-date">${formatDate(item.date)}</span>
-            <span class="ticker-category">${item.category}</span>
-            <span class="ticker-title">${item.title}</span>
-        </div>
-    `;
-    }).join('');
-
-    console.log('  - Generated ticker HTML length:', tickerHTML.length);
-
-    // 2回繰り返してシームレスなループを作成
-    tickerTrack.innerHTML = tickerHTML + tickerHTML;
-    console.log('  - Ticker initialized successfully');
 }
 
 // ========================================
-// News Panel の初期化
+// スクロールアニメーション
 // ========================================
 
-function initNewsPanel(containerId, newsData) {
-    console.log('initNewsPanel called for:', containerId);
-    console.log('  - newsData type:', typeof newsData);
-    console.log('  - newsData value:', newsData);
-    console.log('  - newsData is array?', Array.isArray(newsData));
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('[data-aos]');
 
-    const container = document.getElementById(containerId);
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
 
-    if (!container) {
-        console.error('Container not found:', containerId);
-        return;
-    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('aos-animate');
+            }
+        });
+    }, observerOptions);
 
-    console.log('Container found:', container);
-
-    if (!newsData || !Array.isArray(newsData)) {
-        console.error('Invalid newsData:', newsData);
-        return;
-    }
-
-    console.log('Processing', newsData.length, 'news items');
-
-    // 最新ニュース（外部ニュース）は日付を非表示
-    const isLatestNews = containerId === 'externalNewsItems';
-    console.log('  - isLatestNews:', isLatestNews);
-
-    const newsHTML = newsData.slice(0, 5).map((item, index) => {
-        console.log(`  - Processing item ${index}:`, item);
-        return `
-        <div class="news-item" onclick="handleNewsClick('${item.link || '#'}')">
-            <div class="news-item-header">
-                ${!isLatestNews ? `<span class="news-item-date">${formatDate(item.date)}</span>` : ''}
-                <span class="news-item-category">${item.category}</span>
-            </div>
-            <h4 class="news-item-title">${item.title}</h4>
-        </div>
-    `;
-    }).join('');
-
-    console.log('Generated HTML length:', newsHTML.length);
-    console.log('Generated HTML:', newsHTML.substring(0, 200));
-
-    container.innerHTML = newsHTML;
-    console.log('News items added to:', containerId);
-    console.log('Container innerHTML length after update:', container.innerHTML.length);
-}
-
-// ========================================
-// Featured Item の初期化
-// ========================================
-
-function initFeaturedItem() {
-    console.log('initFeaturedItem called');
-    const titleEl = document.getElementById('featuredTitle');
-    const summaryEl = document.getElementById('featuredSummary');
-
-    console.log('Featured elements:', {
-        titleEl: titleEl,
-        summaryEl: summaryEl,
-        featuredItem: featuredItem
+    elements.forEach(element => {
+        element.classList.add('aos-init');
+        observer.observe(element);
     });
-
-    if (titleEl && featuredItem && featuredItem.title) {
-        titleEl.textContent = featuredItem.title;
-        console.log('Featured title set:', featuredItem.title);
-    } else {
-        console.error('Failed to set featured title', {
-            hasTitleEl: !!titleEl,
-            hasFeaturedItem: !!featuredItem,
-            hasTitle: featuredItem && !!featuredItem.title
-        });
-    }
-
-    if (summaryEl && featuredItem && featuredItem.summary) {
-        summaryEl.textContent = featuredItem.summary;
-        console.log('Featured summary set:', featuredItem.summary);
-    } else {
-        console.error('Failed to set featured summary', {
-            hasSummaryEl: !!summaryEl,
-            hasFeaturedItem: !!featuredItem,
-            hasSummary: featuredItem && !!featuredItem.summary
-        });
-    }
 }
 
 // ========================================
@@ -152,56 +99,35 @@ function formatDate(dateString) {
     return `${year}.${month}.${day}`;
 }
 
-function handleNewsClick(url) {
-    if (url && url !== '#') {
-        window.open(url, '_blank', 'noopener,noreferrer');
-    }
-}
-
 // ========================================
-// 初期化実行
+// AOS（Animate On Scroll）スタイル
 // ========================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('=== HOME.JS START ===');
-    console.log('1. DOMContentLoaded fired');
-
-    // データの存在確認
-    console.log('2. Data check:');
-    console.log('  - tickerData exists?', typeof tickerData !== 'undefined');
-    console.log('  - internalNews exists?', typeof internalNews !== 'undefined');
-    console.log('  - externalNews exists?', typeof externalNews !== 'undefined');
-    console.log('  - featuredItem exists?', typeof featuredItem !== 'undefined');
-
-    if (typeof tickerData !== 'undefined') {
-        console.log('  - tickerData:', tickerData);
-    }
-    if (typeof internalNews !== 'undefined') {
-        console.log('  - internalNews:', internalNews);
-    }
-    if (typeof externalNews !== 'undefined') {
-        console.log('  - externalNews:', externalNews);
-    }
-    if (typeof featuredItem !== 'undefined') {
-        console.log('  - featuredItem:', featuredItem);
+const style = document.createElement('style');
+style.textContent = `
+    .aos-init {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    // 各初期化関数を実行
-    console.log('3. Starting ticker initialization...');
-    initTicker();
-    console.log('4. Ticker initialization complete');
+    .aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-    console.log('5. Starting internal news panel initialization...');
-    initNewsPanel('internalNewsItems', internalNews);
-    console.log('6. Internal news panel initialization complete');
+    [data-aos-delay="0"] {
+        transition-delay: 0s;
+    }
 
-    console.log('7. Starting external news panel initialization...');
-    initNewsPanel('externalNewsItems', externalNews);
-    console.log('8. External news panel initialization complete');
+    [data-aos-delay="100"] {
+        transition-delay: 0.1s;
+    }
 
-    console.log('9. Starting featured item initialization...');
-    initFeaturedItem();
-    console.log('10. Featured item initialization complete');
+    [data-aos-delay="200"] {
+        transition-delay: 0.2s;
+    }
+`;
+document.head.appendChild(style);
 
-    console.log('=== HOME.JS COMPLETE ===');
-});
+console.log('=== HOME.JS COMPLETE ===');
