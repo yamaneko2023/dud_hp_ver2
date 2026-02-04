@@ -33,7 +33,7 @@
                         <span class="info-label">事業内容</span>
                         <span class="info-value">
                             AIアプリ開発<BR>
-                            DX推進支援（企業・個人向け）<BR>
+                            DX / AX推進支援（企業・個人向け）<BR>
                             システム開発（Webシステム、アプリケーション、Webサイト）<BR>
                             データ分析<BR>
                             生成AI教育/学習関連<BR>

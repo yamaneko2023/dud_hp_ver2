@@ -17,7 +17,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">自由な働き方を実現</h2>
-                <p class="section-subtitle">様々なご希望ご相談ください自由な働き方や考え方を取り入れていきます</p>
+                <p class="section-subtitle">様々なご希望、ご相談ください。自由な働き方や考え方を取り入れていきます</p>
             </div>
         </div>
     </section>
@@ -64,14 +64,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- CTAセクション -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>一緒に働きませんか？</h2>
-            <p>私たちと一緒に、未来を創造していただけるメンバーを募集しています</p>
-            <a href="contact.php" class="btn btn-primary">お問い合わせ</a>
         </div>
     </section>
 

@@ -331,9 +331,13 @@ body {
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    font-weight: 400;
+    /* 元の設定: font-size: 1.1rem; */
+    /* 元の設定: color: var(--text-light); */
+    /* 元の設定: font-weight: 400; */
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.8;
 }
 
 .services-grid {
@@ -387,10 +391,12 @@ body {
 }
 
 .intro-text {
-    font-size: 1.2rem;
+    /* 元の設定: font-size: 1.2rem; */
+    /* 元の設定: font-weight: 400; */
+    font-size: 1.25rem;
     line-height: 2;
     color: var(--text-dark);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .services-list {
@@ -450,10 +456,13 @@ body {
 }
 
 .service-item p {
-    font-size: 1.05rem;
+    /* 元の設定: font-size: 1.05rem; */
+    /* 元の設定: color: var(--text-light); */
+    /* 元の設定: font-weight: 400; */
+    font-size: 1.15rem;
     line-height: 1.9;
-    color: var(--text-light);
-    font-weight: 400;
+    color: var(--text-dark);
+    font-weight: 500;
     text-align: left;
 }
 
@@ -539,9 +548,14 @@ body {
 }
 
 .info-value {
-    color: var(--text-light);
+    /* 元の設定: color: var(--text-light); */
+    /* 元の設定: font-weight: 400; */
+    /* 元の設定: font-sizeなし（デフォルト） */
+    color: var(--text-dark);
     flex: 1;
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.8;
 }
 
 /* お問い合わせセクション */
@@ -737,9 +751,11 @@ body {
 }
 
 .page-subtitle {
-    font-size: 1.1rem;
+    /* 元の設定: font-size: 1.1rem; */
+    /* 元の設定: font-weight: 400; */
+    font-size: 1.25rem;
     color: white;
-    font-weight: 400;
+    font-weight: 500;
     text-shadow:
         1px 1px 3px rgba(0, 0, 0, 0.8),
         0 0 8px rgba(0, 0, 0, 0.5);
@@ -849,6 +865,16 @@ body {
     background: var(--bg-light);
 }
 
+.mission-section .section-subtitle {
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: none;
+}
+
 .mission-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -931,8 +957,13 @@ body {
 }
 
 .timeline-content p {
-    color: var(--text-light);
-    font-weight: 400;
+    /* 元の設定: color: var(--text-light); */
+    /* 元の設定: font-weight: 400; */
+    /* 元の設定: font-sizeなし（デフォルト） */
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.8;
 }
 
 /* コンタクト情報セクション */
@@ -1077,7 +1108,9 @@ body {
     text-align: center;
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: 0;
-    font-size: 1rem;
+    /* 元の設定: font-size: 1rem; */
+    font-size: 1.15rem;
+    font-weight: 500;
     line-height: 1.8;
 }
 
@@ -1118,10 +1151,14 @@ body {
 
 .confirm-value {
     flex: 1;
-    color: var(--text-light);
+    /* 元の設定: color: var(--text-light); */
+    /* 元の設定: font-weight: 400; */
+    /* 元の設定: font-sizeなし（デフォルト） */
+    color: var(--text-dark);
     word-break: break-word;
     white-space: pre-wrap;
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 /* 送信完了画面 */
@@ -1414,10 +1451,12 @@ body {
 }
 
 .page-subtitle {
-    font-size: 1.2rem;
+    /* 元の設定: font-size: 1.2rem; */
+    /* 元の設定: font-weight: 400; */
+    font-size: 1.3rem;
     color: white;
-    font-weight: 400;
-    text-shadow: 
+    font-weight: 500;
+    text-shadow:
         1px 1px 3px rgba(0, 0, 0, 0.8),
         0 0 8px rgba(0, 0, 0, 0.5);
 }
@@ -1707,10 +1746,12 @@ body {
 }
 
 .vision-text {
-    font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+    /* 元の設定: font-size: clamp(0.9rem, 1.7vw, 1.05rem); */
+    /* 元の設定: font-weight: 400; */
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
     line-height: 2;
     color: var(--text-dark);
-    font-weight: 400;
+    font-weight: 500;
     text-align: left;
     max-width: 750px;
     margin: 0 auto;
@@ -1764,9 +1805,11 @@ body {
 }
 
 .triangle-text {
-    font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+    /* 元の設定: font-size: clamp(0.9rem, 1.7vw, 1.05rem); */
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
     line-height: 2;
-    opacity: 0.95;
+    opacity: 1;
+    font-weight: 500;
     text-align: left;
     max-width: 750px;
     margin: 0 auto 5rem auto;
@@ -1841,8 +1884,11 @@ body {
 }
 
 .triangle-description {
-    font-size: 1.1rem;
-    color: var(--text-light);
+    /* 元の設定: font-size: 1.1rem; */
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.8;
 }
 
 /* レスポンシブ対応 */
@@ -3378,9 +3424,11 @@ body {
 }
 
 .vision-card-desc {
-    font-size: 1.15rem;
+    /* 元の設定: font-size: 1.15rem; */
+    font-size: 1.2rem;
     color: white;
     line-height: 1.9;
+    font-weight: 500;
     position: relative;
     z-index: 1;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
@@ -3472,8 +3520,10 @@ body {
 }
 
 .service-desc {
-    font-size: 1.05rem;
-    color: #555;
+    /* 元の設定: font-size: 1.05rem; */
+    /* 元の設定: color: #555; */
+    font-size: 1.15rem;
+    color: var(--text-dark);
     line-height: 1.8;
     font-weight: 500;
 }
@@ -3659,9 +3709,11 @@ body {
 }
 
 .company-desc {
-    font-size: 1.15rem;
+    /* 元の設定: font-size: 1.15rem; */
+    /* 元の設定: color: #333; */
+    font-size: 1.2rem;
     line-height: 2.1;
-    color: #333;
+    color: var(--text-dark);
     margin: 35px 0 45px;
     font-weight: 500;
 }
@@ -3690,7 +3742,7 @@ body {
 
 /* 7. 採用情報セクション */
 .recruit-section {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.95) 0%, rgba(139, 92, 246, 0.95) 100%);
+    background: white;
     padding: 120px 0;
     position: relative;
     min-height: 100vh;
@@ -3701,7 +3753,7 @@ body {
 .recruit-circle {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
     filter: blur(80px);
     pointer-events: none;
 }
@@ -3735,25 +3787,35 @@ body {
     max-width: 800px;
     margin: 0 auto;
     aspect-ratio: 16/9;
-    background: rgba(255, 255, 255, 0.1);
+    background: #f5f7fa;
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    border: 2px solid #e2e8f0;
+    backdrop-filter: none;
 }
 
 .recruit-image-placeholder svg {
     width: 120px;
     height: 120px;
-    color: white;
+    color: #6366f1;
     opacity: 0.7;
+}
+
+.recruit-section .section-title-large {
+    color: #1a1a2e !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.recruit-section .section-subtitle {
+    color: #4a5568 !important;
+    text-shadow: none !important;
 }
 
 /* 8. フッターCTA */
 .footer-cta-section {
-    background: linear-gradient(180deg, rgba(20, 20, 40, 0.98) 0%, rgba(10, 10, 30, 0.98) 100%);
+    background: #f5f7fa;
     padding: 120px 0;
     position: relative;
     overflow: hidden;
@@ -3765,10 +3827,10 @@ body {
     left: 0;
     width: 100%;
     height: 200px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><rect x="50" y="100" width="60" height="100" fill="%23ffffff" opacity="0.1"/><rect x="130" y="80" width="80" height="120" fill="%23ffffff" opacity="0.15"/><rect x="230" y="60" width="70" height="140" fill="%23ffffff" opacity="0.1"/><rect x="320" y="90" width="90" height="110" fill="%23ffffff" opacity="0.12"/><rect x="430" y="50" width="60" height="150" fill="%23ffffff" opacity="0.08"/><rect x="510" y="70" width="100" height="130" fill="%23ffffff" opacity="0.15"/><rect x="630" y="90" width="70" height="110" fill="%23ffffff" opacity="0.1"/><rect x="720" y="60" width="80" height="140" fill="%23ffffff" opacity="0.13"/><rect x="820" y="80" width="65" height="120" fill="%23ffffff" opacity="0.09"/><rect x="900" y="100" width="75" height="100" fill="%23ffffff" opacity="0.11"/></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><rect x="50" y="100" width="60" height="100" fill="%236366f1" opacity="0.08"/><rect x="130" y="80" width="80" height="120" fill="%238b5cf6" opacity="0.08"/><rect x="230" y="60" width="70" height="140" fill="%236366f1" opacity="0.08"/><rect x="320" y="90" width="90" height="110" fill="%238b5cf6" opacity="0.08"/><rect x="430" y="50" width="60" height="150" fill="%236366f1" opacity="0.08"/><rect x="510" y="70" width="100" height="130" fill="%238b5cf6" opacity="0.08"/><rect x="630" y="90" width="70" height="110" fill="%236366f1" opacity="0.08"/><rect x="720" y="60" width="80" height="140" fill="%238b5cf6" opacity="0.08"/><rect x="820" y="80" width="65" height="120" fill="%236366f1" opacity="0.08"/><rect x="900" y="100" width="75" height="100" fill="%238b5cf6" opacity="0.08"/></svg>');
     background-size: cover;
     background-position: bottom;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .footer-cta-content {
@@ -3780,20 +3842,18 @@ body {
 .footer-cta-title {
     font-size: 4.5rem;
     font-weight: 900;
-    color: white;
+    color: #1a1a2e;
     margin-bottom: 25px;
     letter-spacing: 6px;
-    text-shadow:
-        0 0 40px rgba(0, 0, 0, 0.5),
-        0 4px 30px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer-cta-subtitle {
     font-size: 1.8rem;
-    color: white;
+    color: #4a5568;
     font-weight: 600;
     margin-bottom: 60px;
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    text-shadow: none;
 }
 
 /* レスポンシブ対応 */
@@ -3917,9 +3977,9 @@ body {
     background: #f5f7fa !important;
 }
 
-/* フッターCTAの背景を濃く */
+/* フッターCTAの背景 */
 .footer-cta-section {
-    background: linear-gradient(180deg, #0f0f1e 0%, #0a0a15 100%) !important;
+    background: #f5f7fa !important;
 }
 
 
@@ -4832,16 +4892,17 @@ body {
 }
 
 /* ========================================
-   ヒーローセクション - 高さを詰める
+   ヒーローセクション - 高さとレイアウト調整
    ======================================== */
 
 .hero-fullscreen {
-    min-height: 50vh !important;
-    max-height: 50vh !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    padding-top: 100px !important; /* ナビゲーションバーの高さを確保 */
 }
 
 .hero-content-fullscreen {
-    padding: 0 !important;
+    padding: 80px 20px !important;
 }
 
 .hero-subtitle-large {
@@ -4850,14 +4911,22 @@ body {
 
 @media (max-width: 768px) {
     .hero-fullscreen {
-        min-height: 45vh !important;
-        max-height: 45vh !important;
+        min-height: 100vh !important;
+        padding-top: 80px !important;
+    }
+
+    .hero-content-fullscreen {
+        padding: 60px 20px !important;
     }
 }
 
 @media (max-width: 480px) {
     .hero-fullscreen {
-        min-height: 40vh !important;
-        max-height: 40vh !important;
+        min-height: 100vh !important;
+        padding-top: 70px !important;
+    }
+
+    .hero-content-fullscreen {
+        padding: 40px 15px !important;
     }
 }

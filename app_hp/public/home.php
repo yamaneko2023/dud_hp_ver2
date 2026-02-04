@@ -113,8 +113,8 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                 </div>
-                <h3 class="service-title">DX推進支援</h3>
-                <p class="service-desc">業務プロセス可視化、デジタル化戦略</p>
+                <h3 class="service-title">DX / AX推進支援</h3>
+                <p class="service-desc">DXという土台の上に、AXを。データ基盤構築から、AI活用まで</p>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="0">
@@ -199,7 +199,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                 <h2 class="section-title-large">テクノロジーの力で、<br>夢を叶えることを実現に</h2>
                 <p class="company-desc">
                     株式会社DIG-UP DATAは、データとAIの力でビジネスを変革する企業です。<br><br>
-                    私たちは「データの価値を引き出す」をミッションに、企業のDX推進、AI開発、データ分析など、幅広いサービスを提供しています。<br><br>
+                    私たちは「データの価値を引き出す」をミッションに、企業のDX / AX推進、AI開発、データ分析など、幅広いサービスを提供しています。<br><br>
                     技術力と創造力で、お客様のビジネス成長をサポートし、共に未来を創造します。
                 </p>
                 <a href="company.php" class="btn-primary-large">会社情報を見る</a>
