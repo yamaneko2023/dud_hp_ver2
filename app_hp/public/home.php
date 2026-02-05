@@ -1,4 +1,5 @@
 <?php
+$page_key = 'home'; // SEO用ページキー
 $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
 
 // JSONデータを読み込み（メンテナンス中のためコメントアウト）
@@ -6,6 +7,9 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
 // $tech_news_json = file_get_contents('../../data/tech_news.json');
 ?>
 <?php include '../includes/header.php'; ?>
+
+<!-- メインコンテンツ -->
+<main>
 
 <!-- 1. ヒーローセクション（フルスクリーン） -->
 <section id="home" class="hero-fullscreen">
@@ -247,5 +251,8 @@ const announcements = <?php echo $announcements_json; ?>;
 const latestNews = <?php echo $tech_news_json; ?>;
 </script>
 -->
+
+</main>
+<!-- /メインコンテンツ -->
 
 <?php include '../includes/footer.php'; ?>

@@ -1,4 +1,7 @@
-<?php $page_title = 'コンプライアンスポリシー - 株式会社DIG-UP DATA'; ?>
+<?php
+$page_key = 'compliance'; // SEO用ページキー
+$page_title = 'コンプライアンスポリシー - 株式会社DIG-UP DATA';
+?>
 <?php include '../includes/header.php'; ?>
 
     <!-- ページヘッダー -->

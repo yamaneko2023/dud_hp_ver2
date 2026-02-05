@@ -1,5 +1,11 @@
-<?php $page_title = 'お問い合わせ - 株式会社DIG-UP DATA'; ?>
+<?php
+$page_key = 'contact'; // SEO用ページキー
+$page_title = 'お問い合わせ - 株式会社DIG-UP DATA';
+?>
 <?php include '../includes/header.php'; ?>
+
+<!-- メインコンテンツ -->
+<main>
 
     <!-- ページヘッダー -->
     <section class="page-header">
@@ -98,5 +104,8 @@
     </section>
 
     <script src="../../js/contact.js"></script>
+
+</main>
+<!-- /メインコンテンツ -->
 
 <?php include '../includes/footer.php'; ?>

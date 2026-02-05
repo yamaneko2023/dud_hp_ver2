@@ -1,4 +1,7 @@
-<?php $page_title = '送信完了 - 株式会社DIG-UP DATA'; ?>
+<?php
+$page_key = 'thanks'; // SEO用ページキー
+$page_title = '送信完了 - 株式会社DIG-UP DATA';
+?>
 <?php include '../includes/header.php'; ?>
 
     <!-- ページヘッダー -->

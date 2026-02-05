@@ -1,4 +1,7 @@
-<?php $page_title = '採用活動における個人情報の取扱い - 株式会社DIG-UP DATA'; ?>
+<?php
+$page_key = 'recruit-privacy'; // SEO用ページキー
+$page_title = '採用活動における個人情報の取扱い - 株式会社DIG-UP DATA';
+?>
 <?php include '../includes/header.php'; ?>
 
     <!-- ページヘッダー -->

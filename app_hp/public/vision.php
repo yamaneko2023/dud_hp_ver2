@@ -1,5 +1,11 @@
-<?php $page_title = '私たちのビジョン - 株式会社DIG-UP DATA'; ?>
+<?php
+$page_key = 'vision'; // SEO用ページキー
+$page_title = '私たちのビジョン - 株式会社DIG-UP DATA';
+?>
 <?php include '../includes/header.php'; ?>
+
+<!-- メインコンテンツ -->
+<main>
 
     <!-- ビジョンヒーローセクション -->
     <section class="vision-hero">
@@ -103,5 +109,8 @@
             </div>
         </div>
     </section>
+
+</main>
+<!-- /メインコンテンツ -->
 
 <?php include '../includes/footer.php'; ?>

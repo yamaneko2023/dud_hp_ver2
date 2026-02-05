@@ -1,4 +1,7 @@
-<?php $page_title = 'プライバシーポリシー - 株式会社DIG-UP DATA'; ?>
+<?php
+$page_key = 'privacy'; // SEO用ページキー
+$page_title = 'プライバシーポリシー - 株式会社DIG-UP DATA';
+?>
 <?php include '../includes/header.php'; ?>
 
     <!-- ページヘッダー -->

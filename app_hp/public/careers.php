@@ -1,5 +1,11 @@
-<?php $page_title = '採用情報 - 株式会社DIG-UP DATA'; ?>
+<?php
+$page_key = 'careers'; // SEO用ページキー
+$page_title = '採用情報 - 株式会社DIG-UP DATA';
+?>
 <?php include '../includes/header.php'; ?>
+
+<!-- メインコンテンツ -->
+<main>
 
     <!-- ページヘッダー -->
     <section class="page-header">
@@ -66,5 +72,8 @@
             </div>
         </div>
     </section>
+
+</main>
+<!-- /メインコンテンツ -->
 
 <?php include '../includes/footer.php'; ?>
