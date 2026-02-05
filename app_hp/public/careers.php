@@ -97,17 +97,17 @@ $page_title = '採用情報 - 株式会社DIG-UP DATA';
                 </div>
             </div>
 
-            <div class="careers-cta" style="text-align: center; margin-top: 60px; padding: 60px 20px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); border-radius: 20px; color: white;">
-                <h2 style="font-size: 2rem; margin-bottom: 20px;">まずはお気軽にご相談ください</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
+            <div class="careers-cta">
+                <h2 class="cta-title">まずはお気軽にご相談ください</h2>
+                <p class="cta-text">
                     ご質問や応募に関するご相談など、お問い合わせフォームからご連絡ください。<br>
                     カジュアル面談も歓迎です。
                 </p>
-                <a href="contact.php" class="btn-white-large" style="background: white; color: #6366f1;">お問い合わせ</a>
-                <p style="margin-top: 30px; opacity: 0.8;">
-                    <a href="company.php" style="color: white; text-decoration: underline;">会社概要を見る</a>　|
-                    <a href="vision.php" style="color: white; text-decoration: underline;">ビジョンを見る</a>
-                </p>
+                <div class="cta-buttons">
+                    <a href="contact.php" class="btn-primary-large">お問い合わせ</a>
+                    <a href="company.php" class="btn-primary-large">会社概要を見る</a>
+                    <a href="vision.php" class="btn-primary-large">ビジョンを見る</a>
+                </div>
             </div>
         </div>
     </section>

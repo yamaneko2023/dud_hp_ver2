@@ -107,17 +107,17 @@ $page_title = 'サービス - 株式会社DIG-UP DATA';
                 </div>
             </div>
 
-            <div class="services-cta" style="text-align: center; margin-top: 80px; padding: 60px 20px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-radius: 20px;">
-                <h2 style="font-size: 2rem; margin-bottom: 20px; color: #1f2937;">お客様のビジネス課題を解決します</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 30px; color: #6b7280;">
+            <div class="services-cta">
+                <h2 class="cta-title">お客様のビジネス課題を解決します</h2>
+                <p class="cta-text">
                     AI開発、データ分析、DX推進に関するご相談はお気軽にお問い合わせください。<br>
                     最適なソリューションをご提案いたします。
                 </p>
-                <a href="contact.php" class="btn-primary-large">お問い合わせ</a>
-                <p style="margin-top: 20px;">
-                    <a href="company.php" style="color: #6366f1; text-decoration: underline;">会社概要を見る</a>　|
-                    <a href="careers.php" style="color: #6366f1; text-decoration: underline;">採用情報を見る</a>
-                </p>
+                <div class="cta-buttons">
+                    <a href="contact.php" class="btn-primary-large">お問い合わせ</a>
+                    <a href="company.php" class="btn-primary-large">会社概要を見る</a>
+                    <a href="careers.php" class="btn-primary-large">採用情報を見る</a>
+                </div>
             </div>
         </div>
     </section>

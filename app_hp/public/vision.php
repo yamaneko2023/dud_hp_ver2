@@ -107,10 +107,20 @@ $page_title = '私たちのビジョン - 株式会社DIG-UP DATA';
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="vision-cta">
-                <p class="cta-text">このビジョンを実現するために、6つのコアサービスでお客様をサポートします</p>
-                <a href="services.php" class="btn-primary-large">サービス詳細を見る</a>
+    <!-- CTAセクション -->
+    <section class="page-section">
+        <div class="container">
+            <div class="vision-cta-section">
+                <h2 class="cta-title">私たちのビジョンを実現するために</h2>
+                <p class="cta-text">6つのコアサービスでお客様をサポートします</p>
+                <div class="cta-buttons">
+                    <a href="services.php" class="btn-primary-large">サービス詳細を見る</a>
+                    <a href="company.php" class="btn-primary-large">会社概要を見る</a>
+                    <a href="contact.php" class="btn-primary-large">お問い合わせ</a>
+                </div>
             </div>
         </div>
     </section>

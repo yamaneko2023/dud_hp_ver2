@@ -96,11 +96,11 @@ $page_title = '会社概要 - 株式会社DIG-UP DATA';
                 </div>
             </div>
 
-            <div class="company-links" style="text-align: center; margin-top: 60px; padding: 40px 20px;">
-                <h2 style="font-size: 1.75rem; margin-bottom: 30px; color: #1f2937;">もっと詳しく知る</h2>
-                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                    <a href="vision.php" class="btn-secondary-large">ビジョンを見る</a>
-                    <a href="services.php" class="btn-secondary-large">サービスを見る</a>
+            <div class="company-cta">
+                <h2 class="cta-title">もっと詳しく知る</h2>
+                <div class="cta-buttons">
+                    <a href="vision.php" class="btn-primary-large">ビジョンを見る</a>
+                    <a href="services.php" class="btn-primary-large">サービスを見る</a>
                     <a href="careers.php" class="btn-primary-large">採用情報を見る</a>
                 </div>
             </div>
