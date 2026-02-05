@@ -1,9 +1,9 @@
 <?php
 $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
 
-// JSONデータを読み込み
-$announcements_json = file_get_contents('../../data/announcements.json');
-$tech_news_json = file_get_contents('../../data/tech_news.json');
+// JSONデータを読み込み（メンテナンス中のためコメントアウト）
+// $announcements_json = file_get_contents('../../data/announcements.json');
+// $tech_news_json = file_get_contents('../../data/tech_news.json');
 ?>
 <?php include '../includes/header.php'; ?>
 
@@ -154,7 +154,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
     </div>
 </section>
 
-<!-- 4. ニュースセクション（白背景） -->
+<!-- 4. ニュースセクション（白背景） - メンテナンス中 -->
 <section class="news-section">
     <!-- 装飾用の円形グラフィック -->
     <div class="section-circle section-circle-right"></div>
@@ -165,27 +165,20 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
             <h2 class="section-title-large">最新情報</h2>
         </div>
 
-        <div class="news-columns">
-            <div class="news-column">
-                <h3 class="news-column-title">お知らせ</h3>
-                <div class="news-list" id="announcementsList">
-                    <!-- JavaScriptで動的に生成 -->
-                </div>
+        <!-- メンテナンス中の表示 -->
+        <div style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); border-radius: 20px; margin: 40px 0;">
+            <div style="display: inline-block; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center; margin-bottom: 30px;">
+                <svg style="width: 40px; height: 40px; color: white;" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
             </div>
-
-            <div class="news-column">
-                <h3 class="news-column-title">
-                    最新ニュース
-                    <span class="news-badge">Today</span>
-                </h3>
-                <div class="news-list" id="latestNewsList">
-                    <!-- JavaScriptで動的に生成 -->
-                </div>
-            </div>
-        </div>
-
-        <div class="section-cta">
-            <a href="#" class="btn-secondary-large">すべて見る</a>
+            <h3 style="font-size: 1.75rem; font-weight: 700; color: #1f2937; margin-bottom: 15px;">メンテナンス中</h3>
+            <p style="font-size: 1.1rem; color: #6b7280; line-height: 1.8; max-width: 600px; margin: 0 auto;">
+                現在、ニュース・お知らせセクションはメンテナンス中です。<br>
+                より良いコンテンツをお届けするため、準備を進めております。<br>
+                しばらくお待ちください。
+            </p>
         </div>
     </div>
 </section>
@@ -205,12 +198,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                 <a href="company.php" class="btn-primary-large">会社情報を見る</a>
             </div>
             <div class="company-image">
-                <div class="company-image-placeholder">
-                    <!-- 代表者の写真などを配置 -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                </div>
+                <img src="../../img/home_company.png" alt="横浜みなとみらい - DIG-UP DATAオフィスエリア" class="company-photo">
             </div>
         </div>
     </div>
@@ -230,12 +218,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
         </div>
 
         <div class="recruit-image">
-            <div class="recruit-image-placeholder">
-                <!-- チーム写真を配置 -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-            </div>
+            <img src="../../img/home_team.png" alt="DIG-UP DATAのチーム" class="team-photo">
         </div>
 
         <div class="section-cta">
@@ -257,10 +240,12 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
     </div>
 </section>
 
-<!-- JavaScriptにデータを渡す -->
+<!-- JavaScriptにデータを渡す（メンテナンス中のためコメントアウト） -->
+<!--
 <script>
 const announcements = <?php echo $announcements_json; ?>;
 const latestNews = <?php echo $tech_news_json; ?>;
 </script>
+-->
 
 <?php include '../includes/footer.php'; ?>

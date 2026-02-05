@@ -3740,6 +3740,16 @@ body {
     opacity: 0.5;
 }
 
+.company-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 2px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 /* 7. 採用情報セクション */
 .recruit-section {
     background: white;
@@ -3801,6 +3811,19 @@ body {
     height: 120px;
     color: #6366f1;
     opacity: 0.7;
+}
+
+.team-photo {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
 }
 
 .recruit-section .section-title-large {
