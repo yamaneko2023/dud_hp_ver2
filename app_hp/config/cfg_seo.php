@@ -130,3 +130,86 @@ function getTwitterCardType($pageKey) {
 
     return in_array($pageKey, $largeImagePages) ? 'summary_large_image' : 'summary';
 }
+
+/**
+ * パンくずリストのデータを取得
+ *
+ * @param string $pageKey ページキー
+ * @return array パンくずリストの配列
+ */
+function getBreadcrumbs($pageKey) {
+    $baseUrl = COMPANY_URL;
+
+    $breadcrumbs = [
+        'home' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php']
+        ],
+        'vision' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Our Vision', 'url' => $baseUrl . '/app_hp/public/vision.php']
+        ],
+        'services' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Services', 'url' => $baseUrl . '/app_hp/public/services.php']
+        ],
+        'company' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Company', 'url' => $baseUrl . '/app_hp/public/company.php']
+        ],
+        'careers' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Careers', 'url' => $baseUrl . '/app_hp/public/careers.php']
+        ],
+        'contact' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Contact', 'url' => $baseUrl . '/app_hp/public/contact.php']
+        ],
+        'privacy' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Privacy Policy', 'url' => $baseUrl . '/app_hp/public/privacy.php']
+        ],
+        'compliance' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Compliance', 'url' => $baseUrl . '/app_hp/public/compliance.php']
+        ],
+        'recruit-privacy' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Recruit Privacy', 'url' => $baseUrl . '/app_hp/public/recruit-privacy.php']
+        ],
+        'thanks' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php'],
+            ['name' => 'Contact', 'url' => $baseUrl . '/app_hp/public/contact.php'],
+            ['name' => 'Thanks', 'url' => $baseUrl . '/app_hp/public/thanks.php']
+        ]
+    ];
+
+    return $breadcrumbs[$pageKey] ?? [['name' => 'Home', 'url' => $baseUrl . '/app_hp/public/home.php']];
+}
+
+/**
+ * パンくずリストのJSON-LDを生成
+ *
+ * @param string $pageKey ページキー
+ * @return string JSON-LD形式のパンくずリスト
+ */
+function getBreadcrumbJsonLd($pageKey) {
+    $breadcrumbs = getBreadcrumbs($pageKey);
+
+    $itemListElement = [];
+    foreach ($breadcrumbs as $index => $item) {
+        $itemListElement[] = [
+            '@type' => 'ListItem',
+            'position' => $index + 1,
+            'name' => $item['name'],
+            'item' => $item['url']
+        ];
+    }
+
+    $jsonLd = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => $itemListElement
+    ];
+
+    return json_encode($jsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+}

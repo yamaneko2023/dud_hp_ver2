@@ -202,7 +202,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
                 <a href="company.php" class="btn-primary-large">会社情報を見る</a>
             </div>
             <div class="company-image">
-                <img src="../../img/home_company.png" alt="横浜みなとみらい - DIG-UP DATAオフィスエリア" class="company-photo">
+                <img src="../../img/home_company.png" alt="横浜みなとみらい - DIG-UP DATAオフィスエリア" class="company-photo" loading="lazy">
             </div>
         </div>
     </div>
@@ -222,7 +222,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
         </div>
 
         <div class="recruit-image">
-            <img src="../../img/home_team.png" alt="DIG-UP DATAのチーム" class="team-photo">
+            <img src="../../img/home_team.png" alt="DIG-UP DATAのチーム" class="team-photo" loading="lazy">
         </div>
 
         <div class="section-cta">
@@ -231,7 +231,78 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
     </div>
 </section>
 
-<!-- 8. フッターCTA（濃い背景） -->
+<!-- 8. FAQセクション（白背景） -->
+<section class="faq-section" style="padding: 100px 0; background: white;">
+    <div class="container" style="max-width: 900px;">
+        <div class="section-header-center">
+            <h2 class="section-title-large">よくある質問</h2>
+            <p class="section-subtitle">お客様からよくいただくご質問にお答えします</p>
+        </div>
+
+        <div class="faq-list" style="margin-top: 60px;">
+            <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">どのような企業規模に対応していますか？</h3>
+                <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
+                    スタートアップから中小企業、大企業まで、幅広い規模の企業様に対応しております。
+                    お客様のビジネス規模や予算に合わせて、最適なソリューションをご提案いたします。
+                    小規模なWebサイト制作から、大規模なAIシステム開発まで柔軟に対応可能です。
+                </p>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">AI開発の実績はありますか？</h3>
+                <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
+                    はい、多数の実績がございます。チャットボット開発、業務自動化AI、データ分析AIなど、
+                    様々な分野でのAI開発経験があります。最新の生成AI（ChatGPT、Claude等）を活用した
+                    アプリケーション開発も得意としております。
+                </p>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">開発期間はどのくらいですか？</h3>
+                <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
+                    プロジェクトの規模や内容によって異なりますが、小規模なWebサイトで1～2ヶ月、
+                    中規模のシステム開発で3～6ヶ月程度が目安です。
+                    お急ぎの場合や大規模プロジェクトについては、個別にご相談ください。
+                </p>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">DX推進支援では具体的に何をしてもらえますか？</h3>
+                <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
+                    現状の業務プロセス分析、デジタル化の優先順位付け、データ基盤構築、
+                    AI導入支援、従業員向けトレーニングなど、DX推進に必要な全てのプロセスをサポートします。
+                    技術導入だけでなく、組織変革のコンサルティングも行います。
+                </p>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">横浜以外の企業でも対応可能ですか？</h3>
+                <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
+                    はい、全国対応しております。テレワークでのリモート開発も可能ですし、
+                    必要に応じて御社への訪問も対応いたします。
+                    オンライン会議ツールを活用し、距離に関係なくスムーズなコミュニケーションを実現します。
+                </p>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">料金体系について教えてください</h3>
+                <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
+                    プロジェクトの内容や規模によって異なります。まずはお気軽にご相談ください。
+                    お客様のご予算に合わせた最適なプランをご提案いたします。
+                    見積もりは無料ですので、まずはお問い合わせフォームからご連絡ください。
+                </p>
+            </div>
+        </div>
+
+        <div class="section-cta" style="margin-top: 60px; text-align: center;">
+            <p style="margin-bottom: 20px; color: #6b7280;">その他のご質問がございましたら、お気軽にお問い合わせください</p>
+            <a href="contact.php" class="btn-primary-large">お問い合わせ</a>
+        </div>
+    </div>
+</section>
+
+<!-- 9. フッターCTA（濃い背景） -->
 <section class="footer-cta-section">
     <div class="footer-cta-cityscape"></div>
 
@@ -243,6 +314,64 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
         </div>
     </div>
 </section>
+
+<!-- FAQ Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "どのような企業規模に対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "スタートアップから中小企業、大企業まで、幅広い規模の企業様に対応しております。お客様のビジネス規模や予算に合わせて、最適なソリューションをご提案いたします。小規模なWebサイト制作から、大規模なAIシステム開発まで柔軟に対応可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI開発の実績はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、多数の実績がございます。チャットボット開発、業務自動化AI、データ分析AIなど、様々な分野でのAI開発経験があります。最新の生成AI（ChatGPT、Claude等）を活用したアプリケーション開発も得意としております。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "開発期間はどのくらいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "プロジェクトの規模や内容によって異なりますが、小規模なWebサイトで1～2ヶ月、中規模のシステム開発で3～6ヶ月程度が目安です。お急ぎの場合や大規模プロジェクトについては、個別にご相談ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DX推進支援では具体的に何をしてもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "現状の業務プロセス分析、デジタル化の優先順位付け、データ基盤構築、AI導入支援、従業員向けトレーニングなど、DX推進に必要な全てのプロセスをサポートします。技術導入だけでなく、組織変革のコンサルティングも行います。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "横浜以外の企業でも対応可能ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、全国対応しております。テレワークでのリモート開発も可能ですし、必要に応じて御社への訪問も対応いたします。オンライン会議ツールを活用し、距離に関係なくスムーズなコミュニケーションを実現します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "料金体系について教えてください",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "プロジェクトの内容や規模によって異なります。まずはお気軽にご相談ください。お客様のご予算に合わせた最適なプランをご提案いたします。見積もりは無料ですので、まずはお問い合わせフォームからご連絡ください。"
+      }
+    }
+  ]
+}
+</script>
 
 <!-- JavaScriptにデータを渡す（メンテナンス中のためコメントアウト） -->
 <!--

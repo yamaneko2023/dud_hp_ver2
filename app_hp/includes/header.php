@@ -55,13 +55,20 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- パンくずリスト JSON-LD -->
+    <?php if ($page_key !== 'home'): ?>
+    <script type="application/ld+json">
+    <?php echo getBreadcrumbJsonLd($page_key); ?>
+    </script>
+    <?php endif; ?>
 </head>
 <body>
     <!-- ナビゲーション -->
     <nav class="navbar">
         <div class="container">
             <a href="home.php" class="logo">
-                <img src="../../img/company_logo.svg" alt="DIG-UP DATA Inc.">
+                <img src="../../img/company_logo.svg" alt="DIG-UP DATA Inc." loading="eager">
                 <span class="company-name">DIG-UP DATA Inc.</span>
             </a>
             <ul class="nav-menu">
@@ -79,3 +86,29 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
             </div>
         </div>
     </nav>
+
+    <!-- パンくずリスト -->
+    <?php if ($page_key !== 'home'): ?>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <?php
+                $breadcrumbs = getBreadcrumbs($page_key);
+                $lastIndex = count($breadcrumbs) - 1;
+                foreach ($breadcrumbs as $index => $item):
+                    $isLast = ($index === $lastIndex);
+                ?>
+                    <li class="breadcrumb-item <?php echo $isLast ? 'active' : ''; ?>">
+                        <?php if ($isLast): ?>
+                            <span><?php echo htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8'); ?></span>
+                        <?php else: ?>
+                            <a href="<?php echo htmlspecialchars($item['url'], ENT_QUOTES, 'UTF-8'); ?>">
+                                <?php echo htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8'); ?>
+                            </a>
+                        <?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ol>
+        </div>
+    </nav>
+    <?php endif; ?>
