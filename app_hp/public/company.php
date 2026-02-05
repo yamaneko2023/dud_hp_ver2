@@ -21,6 +21,26 @@ $page_title = '会社概要 - 株式会社DIG-UP DATA';
     <!-- 会社概要セクション -->
     <section class="about">
         <div class="container">
+            <div class="about-description">
+                <h2>データの力で、未来を創る</h2>
+                <p>
+                    株式会社DIG-UP DATAは、2023年1月に横浜で設立されたテクノロジー企業です。
+                    「Dig Up the Valuable Data（価値あるデータを掘り起こす）」を企業理念に、
+                    AI開発、データ分析、DX/AX推進支援を通じて、企業のビジネス変革を支援しています。<br><br>
+
+                    私たちは、単なる技術提供者ではありません。お客様のビジネスパートナーとして、
+                    課題の本質を見極め、最適なソリューションを提案し、共に成長することを目指しています。
+                    データとAIの力で、社会課題の解決に貢献し、より良い未来を創造します。<br><br>
+
+                    <strong>私たちの強み：</strong><br>
+                    ・最新のAI技術とデータサイエンスの専門知識<br>
+                    ・フルスタックな開発能力（フロントエンド〜バックエンド〜インフラ）<br>
+                    ・ビジネス視点に立った実践的なソリューション提案<br>
+                    ・柔軟で迅速な対応力<br>
+                    ・教育・学習支援による長期的なサポート
+                </p>
+            </div>
+
             <div class="about-content">
                 <div class="about-info">
                     <div class="info-item">
@@ -73,6 +93,15 @@ $page_title = '会社概要 - 株式会社DIG-UP DATA';
                         <h3>本社移転</h3>
                         <p>神奈川県横浜市西区に本社移転</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="company-links" style="text-align: center; margin-top: 60px; padding: 40px 20px;">
+                <h2 style="font-size: 1.75rem; margin-bottom: 30px; color: #1f2937;">もっと詳しく知る</h2>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="vision.php" class="btn-secondary-large">ビジョンを見る</a>
+                    <a href="services.php" class="btn-secondary-large">サービスを見る</a>
+                    <a href="careers.php" class="btn-primary-large">採用情報を見る</a>
                 </div>
             </div>
         </div>

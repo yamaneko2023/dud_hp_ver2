@@ -31,17 +31,20 @@ $page_title = 'サービス - 株式会社DIG-UP DATA';
     </section>
 
     <!-- サービス一覧 -->
-    <section>
+    <section class="services-list-section">
         <div class="container">
+            <h2 class="section-title-center">6つのコアサービス</h2>
 
             <div class="service-item">
                 <div class="service-number">01</div>
                 <div class="service-text">
                     <h3>Webシステム／サイト構築</h3>
                     <p>
-                        コーポレートサイトやサービスサイト、業務Webシステムなど、
-                        表と裏をつなぐWeb開発を行います
-                        AI活用や将来的な拡張も見据え、運用し続けられるWeb環境を構築します
+                        コーポレートサイト、サービスサイト、業務Webシステムなど、企業のデジタル基盤となるWeb環境を構築します。<br><br>
+                        単なる見た目の美しさだけでなく、SEO対策、ユーザビリティ、保守性、拡張性を重視した設計を行います。
+                        AI機能の組み込みや、将来的なシステム連携も見据えた柔軟なアーキテクチャで、長期的に運用し続けられるWeb環境を提供します。<br><br>
+                        PHP、JavaScript、データベース設計から、クラウドインフラ構築まで、フルスタックで対応可能です。
+                        レスポンシブデザイン、アクセシビリティ対応により、あらゆるデバイスとユーザーに最適な体験を届けます。
                     </p>
                 </div>
             </div>
@@ -70,7 +73,14 @@ $page_title = 'サービス - 株式会社DIG-UP DATA';
                 <div class="service-number">04</div>
                 <div class="service-text">
                     <h3>データ分析</h3>
-                    <p>ビッグデータの収集・整理から、統計分析、データドリブンな意思決定を支援します<BR>データ基盤の設計・構築、包括的なデータ活用をサポートします</p>
+                    <p>
+                        膨大なデータから価値ある洞察を引き出し、ビジネスの意思決定を支援します。<br><br>
+                        データの収集・整理・クレンジングから、統計分析、機械学習モデルの構築、可視化まで、
+                        一貫したデータ分析プロセスを提供します。Pythonを用いた高度な分析、BIツールでのダッシュボード構築により、
+                        データドリブンな経営を実現します。<br><br>
+                        売上予測、顧客分析、マーケティング効果測定、在庫最適化など、業種・業務に応じた分析手法で、
+                        お客様のビジネス課題を解決します。データ基盤の設計・構築から、継続的な分析運用まで、包括的にサポートします。
+                    </p>
                 </div>
             </div>
 
@@ -86,8 +96,28 @@ $page_title = 'サービス - 株式会社DIG-UP DATA';
                 <div class="service-number">06</div>
                 <div class="service-text">
                     <h3>ECサイト構築・運営支援</h3>
-                    <p>オンラインショップの運営、最適なプラットフォームの選定と、売上向上のためのコンサルティングを提供します</p>
+                    <p>
+                        オンラインビジネスの立ち上げから成長まで、総合的にサポートします。<br><br>
+                        Shopify、BASE、自社開発など、お客様のビジネスモデルと規模に最適なプラットフォームを選定し、
+                        デザイン、決済システム導入、在庫管理、配送連携まで、ECサイト運営に必要な全ての機能を実装します。<br><br>
+                        開設後の売上向上も重要です。SEO対策、広告運用、データ分析による改善提案、
+                        顧客体験（UX）の最適化など、継続的な運営支援とコンサルティングを提供します。
+                        AIを活用したレコメンデーション機能やチャットボットの導入により、売上とリピート率の向上を実現します。
+                    </p>
                 </div>
+            </div>
+
+            <div class="services-cta" style="text-align: center; margin-top: 80px; padding: 60px 20px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-radius: 20px;">
+                <h2 style="font-size: 2rem; margin-bottom: 20px; color: #1f2937;">お客様のビジネス課題を解決します</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 30px; color: #6b7280;">
+                    AI開発、データ分析、DX推進に関するご相談はお気軽にお問い合わせください。<br>
+                    最適なソリューションをご提案いたします。
+                </p>
+                <a href="contact.php" class="btn-primary-large">お問い合わせ</a>
+                <p style="margin-top: 20px;">
+                    <a href="company.php" style="color: #6366f1; text-decoration: underline;">会社概要を見る</a>　|
+                    <a href="careers.php" style="color: #6366f1; text-decoration: underline;">採用情報を見る</a>
+                </p>
             </div>
         </div>
     </section>
