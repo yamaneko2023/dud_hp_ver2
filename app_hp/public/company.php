@@ -66,7 +66,7 @@ $page_title = '会社概要 - 株式会社DIG-UP DATA';
                             システム開発（Webシステム、アプリケーション、Webサイト）<BR>
                             データ分析<BR>
                             生成AI教育/学習関連<BR>
-                            ECサイト、コンサルティング<BR>
+                            業務改善コンサルティング<BR>
                         </span>
                     </div>
                     <div class="info-item">

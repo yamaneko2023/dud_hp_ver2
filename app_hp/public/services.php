@@ -33,7 +33,7 @@ $page_title = 'サービス - 株式会社DIG-UP DATA';
     <!-- サービス一覧 -->
     <section class="services-list-section">
         <div class="container">
-            <h2 class="section-title-center">6つのコアサービス</h2>
+            <h2 class="section-title-center">5つのコアサービス</h2>
 
             <div class="service-item">
                 <div class="service-number">01</div>
@@ -89,21 +89,6 @@ $page_title = 'サービス - 株式会社DIG-UP DATA';
                 <div class="service-text">
                     <h3>DX / AX推進支援</h3>
                     <p>データを集める「基盤」から、データで価値を生む「飛躍」へ。DXとAXは地続きの変革です。業務のデジタル化でデータ基盤を整え、その土台の上にAI活用という価値創造を積み上げます。業務プロセスの可視化から、データ基盤構築、AI導入、運用サポートまで、一貫してお客様のビジネス成長を加速させます。</p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <div class="service-number">06</div>
-                <div class="service-text">
-                    <h3>ECサイト構築・運営支援</h3>
-                    <p>
-                        オンラインビジネスの立ち上げから成長まで、総合的にサポートします。<br><br>
-                        自社開発など、お客様のビジネスモデルと規模に最適なプラットフォームを選定し、
-                        デザイン、決済システム導入、在庫管理、配送連携まで、ECサイト運営に必要な全ての機能を実装します。<br><br>
-                        開設後の売上向上も重要です。SEO対策、広告運用、データ分析による改善提案、
-                        顧客体験（UX）の最適化など、継続的な運営支援とコンサルティングを提供します。
-                        AIを活用したレコメンデーション機能やチャットボットの導入により、売上とリピート率の向上を実現します。
-                    </p>
                 </div>
             </div>
 

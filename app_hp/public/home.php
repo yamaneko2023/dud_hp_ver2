@@ -139,7 +139,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
     <div class="container">
         <div class="section-header">
             <span class="section-label">SERVICES</span>
-            <h2 class="section-title-large">6つのコアサービスで<br>ビジネスを加速</h2>
+            <h2 class="section-title-large">5つのコアサービスで<br>ビジネスを加速</h2>
         </div>
 
         <div class="services-grid">
@@ -193,15 +193,6 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
                 <p class="service-desc">個人レッスンから企業研修まで。実務で使えるAI活用スキルを習得</p>
             </div>
 
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                    </svg>
-                </div>
-                <h3 class="service-title">その他サービス</h3>
-                <p class="service-desc">ECサイト、業務改善コンサル。まずはお気軽にご相談ください</p>
-            </div>
         </div>
 
         <div class="section-cta">
