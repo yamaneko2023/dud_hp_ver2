@@ -32,11 +32,6 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
             </div>
         </div>
     </div>
-
-    <div class="scroll-indicator">
-        <span>SCROLL</span>
-        <div class="scroll-arrow"></div>
-    </div>
 </section>
 
 <!-- 2. ビジョンセクション（濃い紫背景） -->
@@ -79,7 +74,64 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
     </div>
 </section>
 
-<!-- 3. サービスセクション（白背景） -->
+<!-- 3. お悩みセクション（薄いグラデーション背景） -->
+<section class="problems-section">
+    <div class="container">
+        <div class="section-header-center">
+            <span class="section-label">PROBLEMS</span>
+            <h2 class="section-title-large">こんなお悩みありませんか？</h2>
+            <p class="section-subtitle">小さく始めたい、でも専門知識が足りない...そんな方を支援します</p>
+        </div>
+
+        <div class="problems-grid">
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="problem-title">予算が少ない<br>でも人手不足もあり、なんとか効率化を</h3>
+                <p class="problem-desc">個人や小規模店舗の案件も丁寧に対応。大手が相手にしない小さな案件でも、私たちにお任せください。</p>
+            </div>
+
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <h3 class="problem-title">生成AIを学びたいが<br>何から始めればいいかわからない</h3>
+                <p class="problem-desc">生成AIの基礎から実務活用まで、ご希望のレベルでサポートします。初心者の方も安心して学べます。</p>
+            </div>
+
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="problem-title">日常業務を効率化したいが<br>具体的な方法がわからない</h3>
+                <p class="problem-desc">個人の作業を分析し、AIやツールを使った効率化をご提案。ルーチンワークの自動化で時間を生み出します。</p>
+            </div>
+
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <h3 class="problem-title">小規模な開発案件だが<br>一歩ずつ効率化したい</h3>
+                <p class="problem-desc">Webサイト、簡易システム、データ分析など、小さな案件でも柔軟に対応。まずはお気軽にご相談ください。</p>
+            </div>
+        </div>
+
+        <div class="section-cta">
+            <a href="contact.php" class="btn-primary-large">まずは無料相談から始める</a>
+        </div>
+    </div>
+</section>
+
+<!-- 4. サービスセクション（白背景） -->
 <section class="services-section">
     <!-- 装飾用の円形グラフィック -->
     <div class="section-circle section-circle-left"></div>
@@ -98,7 +150,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
                     </svg>
                 </div>
                 <h3 class="service-title">AIアプリ開発</h3>
-                <p class="service-desc">チャットボット、AIエージェント、ワークフロー自動化</p>
+                <p class="service-desc">小規模から始められるAI導入。ChatGPTを業務で本格活用したい方に最適</p>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
@@ -108,7 +160,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
                     </svg>
                 </div>
                 <h3 class="service-title">データ分析</h3>
-                <p class="service-desc">ビッグデータ分析、データ基盤構築</p>
+                <p class="service-desc">Excelの限界を超える分析を。お持ちのデータから新しい価値を発見</p>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="200">
@@ -118,7 +170,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
                     </svg>
                 </div>
                 <h3 class="service-title">DX / AX推進支援</h3>
-                <p class="service-desc">DXという土台の上に、AXを。データ基盤構築から、AI活用まで</p>
+                <p class="service-desc">段階的に進められるデジタル化。現状分析から実装まで伴走支援</p>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="0">
@@ -128,7 +180,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
                     </svg>
                 </div>
                 <h3 class="service-title">Webシステム構築</h3>
-                <p class="service-desc">コーポレートサイト、業務Webシステム</p>
+                <p class="service-desc">予算に応じた柔軟な提案。小規模サイトから業務システムまで対応</p>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
@@ -138,7 +190,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
                     </svg>
                 </div>
                 <h3 class="service-title">生成AI教育・学習支援</h3>
-                <p class="service-desc">企業研修、プロンプトエンジニアリング</p>
+                <p class="service-desc">個人レッスンから企業研修まで。実務で使えるAI活用スキルを習得</p>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="200">
@@ -148,7 +200,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
                     </svg>
                 </div>
                 <h3 class="service-title">その他サービス</h3>
-                <p class="service-desc">ECサイト開発、コンサルティング</p>
+                <p class="service-desc">ECサイト、業務改善コンサル。まずはお気軽にご相談ください</p>
             </div>
         </div>
 
@@ -193,7 +245,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
         <div class="company-content">
             <div class="company-text">
                 <span class="section-label">COMPANY</span>
-                <h2 class="section-title-large">テクノロジーの力で、<br>夢を叶えることを実現に</h2>
+                <h2 class="section-title-large">テクノロジーの力で、<br>夢を実現に</h2>
                 <p class="company-desc">
                     株式会社DIG-UP DATAは、データとAIの力でビジネスを変革する企業です。<br><br>
                     私たちは「データの価値を引き出す」をミッションに、企業のDX / AX推進、AI開発、データ分析など、幅広いサービスを提供しています。<br><br>
@@ -241,11 +293,12 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
 
         <div class="faq-list" style="margin-top: 60px;">
             <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
-                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">どのような企業規模に対応していますか？</h3>
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">どのような規模に対応していますか？</h3>
                 <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
-                    スタートアップから中小企業、大企業まで、幅広い規模の企業様に対応しております。
-                    お客様のビジネス規模や予算に合わせて、最適なソリューションをご提案いたします。
-                    小規模なWebサイト制作から、大規模なAIシステム開発まで柔軟に対応可能です。
+                    個人、小規模店舗から大企業まで、すべての規模のお客様に対応しております。
+                    特に、予算が限られている個人や小規模事業者の方々を積極的に支援しています。
+                    小さく始めて段階的に拡大していくアプローチを得意としており、初期費用を抑えたご提案も可能です。
+                    お気軽にご相談ください。
                 </p>
             </div>
 
@@ -326,7 +379,7 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
       "name": "どのような企業規模に対応していますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "スタートアップから中小企業、大企業まで、幅広い規模の企業様に対応しております。お客様のビジネス規模や予算に合わせて、最適なソリューションをご提案いたします。小規模なWebサイト制作から、大規模なAIシステム開発まで柔軟に対応可能です。"
+        "text": "個人、小規模店舗から大企業まで、すべての規模のお客様に対応しております。特に、予算が限られている個人や小規模事業者の方々を積極的に支援しています。小さく始めて段階的に拡大していくアプローチを得意としており、初期費用を抑えたご提案も可能です。お気軽にご相談ください。"
       }
     },
     {
