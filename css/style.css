@@ -4141,6 +4141,10 @@ video {
         font-size: 2.5rem;
     }
 
+    .about-description h2 {
+        font-size: 2rem;
+    }
+
     .vision-cards,
     .services-grid,
     .news-columns,
@@ -4703,6 +4707,10 @@ video {
 
     .section-title-large {
         font-size: 2rem !important;
+    }
+
+    .about-description h2 {
+        font-size: 1.6rem !important;
     }
 
     .vision-card-title {

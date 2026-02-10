@@ -2,9 +2,9 @@
 $page_key = 'home'; // SEO用ページキー
 $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
 
-// JSONデータを読み込み（メンテナンス中のためコメントアウト）
-// $announcements_json = file_get_contents('../../data/announcements.json');
-// $tech_news_json = file_get_contents('../../data/tech_news.json');
+// JSONデータを読み込み
+$announcements_json = file_get_contents('../../data/announcements.json');
+$tech_news_json = file_get_contents('../../data/tech_news.json');
 ?>
 <?php include '../includes/header.php'; ?>
 
@@ -212,20 +212,27 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
             <h2 class="section-title-large">最新情報</h2>
         </div>
 
-        <!-- メンテナンス中の表示 -->
-        <div style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); border-radius: 20px; margin: 40px 0;">
-            <div style="display: inline-block; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center; margin-bottom: 30px;">
-                <svg style="width: 40px; height: 40px; color: white;" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+        <div class="news-columns">
+            <div class="news-column">
+                <h3 class="news-column-title">お知らせ</h3>
+                <div class="news-list" id="announcementsList">
+                    <!-- JavaScriptで動的に生成 -->
+                </div>
             </div>
-            <h3 style="font-size: 1.75rem; font-weight: 700; color: #1f2937; margin-bottom: 15px;">メンテナンス中</h3>
-            <p style="font-size: 1.1rem; color: #6b7280; line-height: 1.8; max-width: 600px; margin: 0 auto;">
-                現在、ニュース・お知らせセクションはメンテナンス中です。<br>
-                より良いコンテンツをお届けするため、準備を進めております。<br>
-                しばらくお待ちください。
-            </p>
+
+            <div class="news-column">
+                <h3 class="news-column-title">
+                    最新ニュース
+                    <span class="news-badge">Today</span>
+                </h3>
+                <div class="news-list" id="latestNewsList">
+                    <!-- JavaScriptで動的に生成 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="section-cta">
+            <a href="#" class="btn-secondary-large">すべて見る</a>
         </div>
     </div>
 </section>
@@ -321,10 +328,10 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
             </div>
 
             <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
-                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">横浜以外の企業でも対応可能ですか？</h3>
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">横浜以外からの相談でも対応可能ですか？</h3>
                 <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
                     はい、全国対応しております。テレワークでのリモート開発も可能ですし、
-                    必要に応じて御社への訪問も対応いたします。
+                    必要に応じて訪問も対応いたします。
                     オンライン会議ツールを活用し、距離に関係なくスムーズなコミュニケーションを実現します。
                 </p>
             </div>
@@ -417,13 +424,11 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
 }
 </script>
 
-<!-- JavaScriptにデータを渡す（メンテナンス中のためコメントアウト） -->
-<!--
+<!-- JavaScriptにデータを渡す -->
 <script>
 const announcements = <?php echo $announcements_json; ?>;
 const latestNews = <?php echo $tech_news_json; ?>;
 </script>
--->
 
 </main>
 <!-- /メインコンテンツ -->
