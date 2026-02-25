@@ -15,7 +15,7 @@ const subjectMap = {
 // CSRFトークンの取得
 async function getCSRFToken() {
     try {
-        const response = await fetch('../api/token.php');
+        const response = await fetch('/api/token.php');
         const data = await response.json();
         return data.token;
     } catch (error) {
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sendData.append('website', formData.website);
 
             // メール送信
-            const response = await fetch('../api/mail.php', {
+            const response = await fetch('/api/mail.php', {
                 method: 'POST',
                 body: sendData
             });
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (result.success) {
                 // 送信成功 - 完了ページへリダイレクト
                 console.log('送信成功');
-                window.location.href = 'thanks.php';
+                window.location.href = '/thanks';
             } else {
                 // エラー表示
                 alert('エラー: ' + result.message);
