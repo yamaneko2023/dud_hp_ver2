@@ -5089,13 +5089,13 @@ video {
    ======================================== */
 
 .hero-fullscreen {
-    min-height: 100vh !important;
+    min-height: 70vh !important;
     max-height: none !important;
-    padding-top: 100px !important; /* ナビゲーションバーの高さを確保 */
+    padding-top: 80px !important; /* ナビゲーションバーの高さを確保 */
 }
 
 .hero-content-fullscreen {
-    padding: 80px 20px !important;
+    padding: 60px 20px !important;
 }
 
 .hero-subtitle-large {
@@ -5104,19 +5104,19 @@ video {
 
 @media (max-width: 768px) {
     .hero-fullscreen {
-        min-height: 100vh !important;
-        padding-top: 80px !important;
+        min-height: 65vh !important;
+        padding-top: 70px !important;
     }
 
     .hero-content-fullscreen {
-        padding: 60px 20px !important;
+        padding: 50px 20px !important;
     }
 }
 
 @media (max-width: 480px) {
     .hero-fullscreen {
-        min-height: 100vh !important;
-        padding-top: 70px !important;
+        min-height: 60vh !important;
+        padding-top: 60px !important;
     }
 
     .hero-content-fullscreen {

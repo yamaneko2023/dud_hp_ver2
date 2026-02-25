@@ -96,7 +96,7 @@ $page_title = 'お問い合わせ - 株式会社DIG-UP DATA';
                     </div>
 
                     <div id="loadingMessage" style="display: none; text-align: center; margin-top: 2rem;">
-                        <p>送信中ですしばらくお待ちください...</p>
+                        <p>送信中です。しばらくお待ちください...</p>
                     </div>
                 </div>
             </div>

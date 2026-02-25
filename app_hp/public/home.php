@@ -4,7 +4,20 @@ $page_title = '株式会社DIG-UP DATA - 未来を創造する企業';
 
 // JSONデータを読み込み
 $announcements_json = file_get_contents('../../data/announcements.json');
-$tech_news_json = file_get_contents('../../data/tech_news.json');
+
+// tech_newsディレクトリから最新のファイルを取得（リニューアル中のためコメントアウト）
+// $tech_news_dir = '../../data/tech_news/';
+// $tech_news_files = glob($tech_news_dir . 'tech_news_*.json');
+// $tech_news_fetch_date = '';
+// if (!empty($tech_news_files)) {
+//     rsort($tech_news_files);
+//     $tech_news_json = file_get_contents($tech_news_files[0]);
+//     if (preg_match('/tech_news_(\d{8})\.json$/', basename($tech_news_files[0]), $matches)) {
+//         $tech_news_fetch_date = $matches[1];
+//     }
+// } else {
+//     $tech_news_json = '[]';
+// }
 ?>
 <?php include '../includes/header.php'; ?>
 
@@ -91,7 +104,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                     </svg>
                 </div>
                 <h3 class="problem-title">予算が少ない<br>でも人手不足もあり、なんとか効率化を</h3>
-                <p class="problem-desc">個人や小規模店舗の案件も丁寧に対応。大手が相手にしない小さな案件でも、私たちにお任せください。</p>
+                <p class="problem-desc">個人や小規模店舗、様々な規模のご依頼も丁寧に対応いたします。「どこに頼めばいいかわからない」ような細かなご要望も、私たちにお任せください。</p>
             </div>
 
             <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
@@ -149,8 +162,8 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                 </div>
-                <h3 class="service-title">AIアプリ開発</h3>
-                <p class="service-desc">小規模から始められるAI導入。ChatGPTを業務で本格活用したい方に最適</p>
+                <h3 class="service-title">LLMアプリケーション開発</h3>
+                <p class="service-desc">「この業務だけAI化したい」というピンポイントなご要望にも対応いたします。即戦力となるツールを開発します。</p>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
@@ -169,7 +182,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                 </div>
-                <h3 class="service-title">DX / AX推進支援</h3>
+                <h3 class="service-title">DX/AX推進支援</h3>
                 <p class="service-desc">段階的に進められるデジタル化。現状分析から実装まで伴走支援</p>
             </div>
 
@@ -189,8 +202,8 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                 </div>
-                <h3 class="service-title">生成AI教育・学習支援</h3>
-                <p class="service-desc">個人レッスンから企業研修まで。実務で使えるAI活用スキルを習得</p>
+                <h3 class="service-title">LLM活用指南</h3>
+                <p class="service-desc">個人レッスンから企業研修まで。実務で使える生成AI活用スキルを習得</p>
             </div>
 
         </div>
@@ -221,12 +234,17 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
             </div>
 
             <div class="news-column">
-                <h3 class="news-column-title">
-                    最新ニュース
-                    <span class="news-badge">Today</span>
-                </h3>
-                <div class="news-list" id="latestNewsList">
-                    <!-- JavaScriptで動的に生成 -->
+                <h3 class="news-column-title">最新ニュース</h3>
+                <div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); border-radius: 15px;">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <svg style="width: 30px; height: 30px; color: white;" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </div>
+                    <h4 style="font-size: 1.2rem; font-weight: 700; color: #1f2937; margin-bottom: 10px;">リニューアル中</h4>
+                    <p style="font-size: 0.95rem; color: #6b7280; line-height: 1.7;">
+                        現在、最新ニュースセクションを<br>リニューアル準備中です。<br>しばらくお待ちください。
+                    </p>
                 </div>
             </div>
         </div>
@@ -246,8 +264,11 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                 <h2 class="section-title-large">テクノロジーの力で、<br>夢を実現に</h2>
                 <p class="company-desc">
                     株式会社DIG-UP DATAは、データとAIの力でビジネスを変革する企業です。<br><br>
-                    私たちは「データの価値を引き出す」をミッションに、企業のDX / AX推進、AI開発、データ分析など、幅広いサービスを提供しています。<br><br>
-                    技術力と創造力で、お客様のビジネス成長をサポートし、共に未来を創造します。
+                    私たちは「データの価値を引き出す」をミッションに、<br>
+                    企業のDX/AX推進、AI開発、データ分析など、<br>
+                    幅広いサービスを提供しています。<br><br>
+                    技術力と創造力で、お客様のビジネス成長をサポートし、<br>
+                    共に未来を創造します。
                 </p>
                 <a href="company.php" class="btn-primary-large">会社情報を見る</a>
             </div>
@@ -293,7 +314,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
             <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
                 <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">どのような規模に対応していますか？</h3>
                 <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
-                    個人、小規模店舗から大企業まで、すべての規模のお客様に対応しております。
+                    個人、小規模店舗、様々な規模のお客様に対応しております。
                     特に、予算が限られている個人や小規模事業者の方々を積極的に支援しています。
                     小さく始めて段階的に拡大していくアプローチを得意としており、初期費用を抑えたご提案も可能です。
                     お気軽にご相談ください。
@@ -303,26 +324,25 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
             <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
                 <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">AI開発の実績はありますか？</h3>
                 <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
-                    はい、多数の実績がございます。チャットボット開発、業務自動化AI、データ分析AIなど、
-                    様々な分野でのAI開発経験があります。最新の生成AI（ChatGPT、Claude等）を活用した
-                    アプリケーション開発も得意としております。
+                    はい、多数の実績がございます。チャットボット開発、Agents開発、データ分析など、
+                    様々な分野でのAI開発経験があります。
                 </p>
             </div>
 
             <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
                 <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">開発期間はどのくらいですか？</h3>
                 <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
-                    プロジェクトの規模や内容によって異なりますが、小規模なWebサイトで1～2ヶ月、
+                    プロジェクトの規模や内容によって異なりますが、小規模なWebサイトで数日～2ヶ月、
                     中規模のシステム開発で3～6ヶ月程度が目安です。
                     お急ぎの場合や大規模プロジェクトについては、個別にご相談ください。
                 </p>
             </div>
 
             <div class="faq-item" style="margin-bottom: 30px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #6366f1;">
-                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">DX推進支援では具体的に何をしてもらえますか？</h3>
+                <h3 class="faq-question" style="font-size: 1.25rem; font-weight: 600; color: #1f2937; margin-bottom: 15px;">DX/AX推進支援では具体的に何をしてもらえますか？</h3>
                 <p class="faq-answer" style="color: #6b7280; line-height: 1.8;">
                     現状の業務プロセス分析、デジタル化の優先順位付け、データ基盤構築、
-                    AI導入支援、従業員向けトレーニングなど、DX推進に必要な全てのプロセスをサポートします。
+                    AI導入支援、従業員向けトレーニングなど、DX/AX推進に必要な全てのプロセスをサポートします。
                     技術導入だけでなく、組織変革のコンサルティングも行います。
                 </p>
             </div>
@@ -344,11 +364,6 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
                     見積もりは無料ですので、まずはお問い合わせフォームからご連絡ください。
                 </p>
             </div>
-        </div>
-
-        <div class="section-cta" style="margin-top: 60px; text-align: center;">
-            <p style="margin-bottom: 20px; color: #6b7280;">その他のご質問がございましたら、お気軽にお問い合わせください</p>
-            <a href="contact.php" class="btn-primary-large">お問い合わせ</a>
         </div>
     </div>
 </section>
@@ -374,10 +389,10 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "どのような企業規模に対応していますか？",
+      "name": "どのような規模に対応していますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "個人、小規模店舗から大企業まで、すべての規模のお客様に対応しております。特に、予算が限られている個人や小規模事業者の方々を積極的に支援しています。小さく始めて段階的に拡大していくアプローチを得意としており、初期費用を抑えたご提案も可能です。お気軽にご相談ください。"
+        "text": "個人、小規模店舗、様々な規模のお客様に対応しております。特に、予算が限られている個人や小規模事業者の方々を積極的に支援しています。小さく始めて段階的に拡大していくアプローチを得意としており、初期費用を抑えたご提案も可能です。お気軽にご相談ください。"
       }
     },
     {
@@ -385,7 +400,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
       "name": "AI開発の実績はありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、多数の実績がございます。チャットボット開発、業務自動化AI、データ分析AIなど、様々な分野でのAI開発経験があります。最新の生成AI（ChatGPT、Claude等）を活用したアプリケーション開発も得意としております。"
+        "text": "はい、多数の実績がございます。チャットボット開発、Agents開発、データ分析など、様々な分野でのAI開発経験があります。"
       }
     },
     {
@@ -393,23 +408,23 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
       "name": "開発期間はどのくらいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "プロジェクトの規模や内容によって異なりますが、小規模なWebサイトで1～2ヶ月、中規模のシステム開発で3～6ヶ月程度が目安です。お急ぎの場合や大規模プロジェクトについては、個別にご相談ください。"
+        "text": "プロジェクトの規模や内容によって異なりますが、小規模なWebサイトで数日～2ヶ月、中規模のシステム開発で3～6ヶ月程度が目安です。お急ぎの場合や大規模プロジェクトについては、個別にご相談ください。"
       }
     },
     {
       "@type": "Question",
-      "name": "DX推進支援では具体的に何をしてもらえますか？",
+      "name": "DX/AX推進支援では具体的に何をしてもらえますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "現状の業務プロセス分析、デジタル化の優先順位付け、データ基盤構築、AI導入支援、従業員向けトレーニングなど、DX推進に必要な全てのプロセスをサポートします。技術導入だけでなく、組織変革のコンサルティングも行います。"
+        "text": "現状の業務プロセス分析、デジタル化の優先順位付け、データ基盤構築、AI導入支援、従業員向けトレーニングなど、DX/AX推進に必要な全てのプロセスをサポートします。技術導入だけでなく、組織変革のコンサルティングも行います。"
       }
     },
     {
       "@type": "Question",
-      "name": "横浜以外の企業でも対応可能ですか？",
+      "name": "横浜以外からの相談でも対応可能ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、全国対応しております。テレワークでのリモート開発も可能ですし、必要に応じて御社への訪問も対応いたします。オンライン会議ツールを活用し、距離に関係なくスムーズなコミュニケーションを実現します。"
+        "text": "はい、全国対応しております。テレワークでのリモート開発も可能ですし、必要に応じて訪問も対応いたします。オンライン会議ツールを活用し、距離に関係なくスムーズなコミュニケーションを実現します。"
       }
     },
     {
@@ -427,7 +442,7 @@ $tech_news_json = file_get_contents('../../data/tech_news.json');
 <!-- JavaScriptにデータを渡す -->
 <script>
 const announcements = <?php echo $announcements_json; ?>;
-const latestNews = <?php echo $tech_news_json; ?>;
+const latestNews = []; // リニューアル中のため空配列
 </script>
 
 </main>

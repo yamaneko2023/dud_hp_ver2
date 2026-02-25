@@ -33,7 +33,7 @@ $page_title = '私たちのビジョン - 株式会社DIG-UP DATA';
                 <div class="vision-number">01</div>
                 <h2 class="vision-title">社会への貢献</h2>
                 <p class="vision-text">
-                    AIとDXの力で、社会全体のデジタル化を推進します<br>
+                    AIとデータの力で、社会全体のデジタル化を推進します<br>
                     企業だけでなく個人も含め、誰もがテクノロジーの恩恵を受けられる社会を目指しています<br><br>
                     データの民主化を通じて、情報格差をなくし、すべての人が平等にチャンスを得られる未来を創造します
                 </p>
@@ -115,7 +115,7 @@ $page_title = '私たちのビジョン - 株式会社DIG-UP DATA';
         <div class="container">
             <div class="vision-cta-section">
                 <h2 class="cta-title">私たちのビジョンを実現するために</h2>
-                <p class="cta-text">6つのコアサービスでお客様をサポートします</p>
+                <p class="cta-text">5つのコアサービスでお客様をサポートします</p>
                 <div class="cta-buttons">
                     <a href="services.php" class="btn-primary-large">サービス詳細を見る</a>
                     <a href="company.php" class="btn-primary-large">会社概要を見る</a>
