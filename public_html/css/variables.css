@@ -1,0 +1,110 @@
+/**
+ * CSS設計トークン / Design Tokens
+ *
+ * プロジェクト全体で使用するCSS変数を定義します。
+ * カラー、グラデーション、シャドウ、ブレークポイント、サイズなど。
+ */
+
+:root {
+    /* ===== カラーパレット ===== */
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --accent-color: #ec4899;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --white: #ffffff;
+
+    /* ===== グラデーション ===== */
+    --gradient-1: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-2: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    --gradient-3: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+
+    /* ===== シャドウ（影） ===== */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+    /* ===== ブレークポイント（メディアクエリ用） ===== */
+    --breakpoint-tablet: 768px;
+    --breakpoint-mobile: 480px;
+
+    /* ===== コンテナ幅 ===== */
+    --container-max-width: 1280px;
+    --navbar-max-width: 850px;
+    --section-max-width-lg: 900px;
+    --section-max-width-md: 800px;
+    --section-max-width-sm: 750px;
+    --section-max-width-xs: 600px;
+    --section-min-width: 200px;
+
+    /* ===== スペーシング ===== */
+    --spacing-xs: 10px;
+    --spacing-sm: 20px;
+    --spacing-md: 40px;
+    --spacing-lg: 60px;
+    --spacing-xl: 100px;
+    --spacing-xxl: 150px;
+
+    /* ===== フォントサイズ ===== */
+    --font-size-xs: 0.875rem;    /* 14px */
+    --font-size-sm: 1rem;         /* 16px */
+    --font-size-md: 1.125rem;     /* 18px */
+    --font-size-lg: 1.25rem;      /* 20px */
+    --font-size-xl: 1.5rem;       /* 24px */
+    --font-size-2xl: 2rem;        /* 32px */
+    --font-size-3xl: 2.5rem;      /* 40px */
+    --font-size-4xl: 3rem;        /* 48px */
+    --font-size-5xl: 3.5rem;      /* 56px */
+
+    /* ===== 行間（line-height） ===== */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.8;
+    --line-height-loose: 2.0;
+
+    /* ===== トランジション時間 ===== */
+    --transition-fast: 0.3s;
+    --transition-normal: 0.6s;
+    --transition-slow: 0.8s;
+
+    /* ===== アニメーション設定 ===== */
+    --animation-duration-fast: 0.3s;
+    --animation-duration-normal: 0.6s;
+    --animation-duration-slow: 1s;
+    --animation-easing: ease;
+
+    /* ===== IntersectionObserver設定（参考値） ===== */
+    /* JavaScriptで使用: threshold: 0.1, rootMargin: -100px */
+
+    /* ===== ボーダー半径 ===== */
+    --border-radius-sm: 8px;
+    --border-radius-md: 15px;
+    --border-radius-lg: 20px;
+    --border-radius-full: 50%;
+
+    /* ===== Z-index レイヤー ===== */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal-backdrop: 1040;
+    --z-index-modal: 1050;
+    --z-index-popover: 1060;
+    --z-index-tooltip: 1070;
+
+    /* ===== ナビゲーションバー ===== */
+    --navbar-height: 80px;
+    --navbar-padding: 20px 50px;
+    --navbar-bg-scrolled: rgba(255, 255, 255, 0.98);
+
+    /* ===== カード ===== */
+    --card-padding: 30px;
+    --card-border-radius: var(--border-radius-md);
+    --card-shadow: var(--shadow-md);
+    --card-shadow-hover: var(--shadow-lg);
+}
+
+/* ===== レスポンシブ用補足 ===== */
+/* タブレット用（768px以下）の値調整が必要な場合はstyle.cssのメディアクエリで上書き */
+/* モバイル用（480px以下）の値調整が必要な場合はstyle.cssのメディアクエリで上書き */

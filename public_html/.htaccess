@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# セキュリティ: 上位ディレクトリ（app/）へのアクセス拒否（念のため）
+# 通常、public_html/ 外のディレクトリはWebから直接アクセスできないが、明示的に拒否
+RewriteCond %{REQUEST_URI} ^/app/
+RewriteRule ^ - [F,L]
+
+# 静的ファイル（CSS, JS, 画像）は除外
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /home → / へ正規化リダイレクト（重複コンテンツ防止）
+RewriteRule ^home/?$ / [R=301,L]
+
+# 旧URL → クリーンURLへ301リダイレクト（SEO対策）
+RewriteCond %{REQUEST_URI} ^/app_hp/public/home\.php$
+RewriteRule ^ / [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/app_hp/public/([a-z\-]+)\.php$
+RewriteRule ^app_hp/public/([a-z\-]+)\.php$ /$1 [R=301,L]
+
+# クリーンURL → index.phpへ内部転送
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z\-]*)$ /index.php?route=$1 [QSA,L]
