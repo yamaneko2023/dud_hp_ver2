@@ -34,13 +34,13 @@ class PageController {
     private function executePageLogic($pageKey) {
         switch ($pageKey) {
             case 'home':
-                // お知らせJSON読み込み（APP_DIR使用）
-                $json_path = APP_DIR . '/data/announcements.json';
+                // お知らせJSON読み込み（DATA_DIR使用）
+                $json_path = DATA_DIR . '/announcements.json';
                 $this->viewData['announcements_json'] = file_exists($json_path)
                     ? file_get_contents($json_path)
                     : '[]';
                 // 最新ニュースJSON読み込み
-                $news_path = APP_DIR . '/data/tech_news.json';
+                $news_path = DATA_DIR . '/tech_news.json';
                 $this->viewData['tech_news_json'] = file_exists($news_path)
                     ? file_get_contents($news_path)
                     : '[]';

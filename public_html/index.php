@@ -11,6 +11,7 @@ ini_set('display_errors', 0);
 
 // 非公開ディレクトリのパス定義
 define('APP_DIR', __DIR__ . '/../app');
+define('DATA_DIR', __DIR__ . '/../data');
 
 // 設定ファイル読み込み
 require_once APP_DIR . '/config/cfg_routes.php';
