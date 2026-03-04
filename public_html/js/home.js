@@ -72,6 +72,7 @@ function initNewsLists() {
                 <a href="${item.link || '#'}" class="news-item-simple" target="_blank" rel="noopener noreferrer">
                     <div class="news-item-left">
                         <span class="news-date">${formatDate(item.date)}</span>
+                        <span class="news-type">${formatType(item.type)}</span>
                         <span class="news-category">${item.category}</span>
                         <span class="news-title-text">${item.title}</span>
                     </div>
@@ -118,6 +119,11 @@ function initScrollAnimations() {
 // ========================================
 // ユーティリティ関数
 // ========================================
+
+function formatType(type) {
+    const labels = { article: '記事', youtube: 'YouTube' };
+    return labels[type] || type || '';
+}
 
 function formatDate(dateString) {
     const date = new Date(dateString);

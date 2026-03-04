@@ -3831,6 +3831,13 @@ video {
     margin-left: 12px;
 }
 
+/* 記事タイプの表示 */
+.news-type {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-right: 8px;
+}
+
 /* 空データ時の表示 */
 .news-empty {
     text-align: center;
