@@ -108,7 +108,7 @@
             containerProps: {
                 style: {
                     right: '20px',
-                    bottom: '20px'
+                    bottom: '50%'
                 }
             },
             draggable: false
@@ -124,6 +124,7 @@
     <style>
         #dify-chatbot-bubble-button {
             background-color: #1C64F2 !important;
+            transform: translateY(50%);
         }
         #dify-chatbot-bubble-window {
             width: 24rem !important;

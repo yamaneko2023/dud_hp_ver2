@@ -26,38 +26,53 @@ document.addEventListener('DOMContentLoaded', function() {
 function initNewsLists() {
     // お知らせリスト
     const announcementsList = document.getElementById('announcementsList');
-    if (announcementsList && Array.isArray(announcements)) {
-        const publishedAnnouncements = announcements.filter(item => item.published === true);
-        const announcementsHTML = publishedAnnouncements.slice(0, 5).map(item => `
-            <div class="news-item-simple">
-                <div class="news-item-left">
-                    <span class="news-date">${formatDate(item.date)}</span>
-                    <span class="news-category">${item.category}</span>
-                    <span class="news-title-text">${item.title}</span>
+    if (announcementsList) {
+        const published = Array.isArray(announcements)
+            ? announcements.filter(item => item.published === true) : [];
+        if (published.length > 0) {
+            announcementsList.innerHTML = published.map(item => `
+                <div class="news-item-simple">
+                    <div class="news-item-left">
+                        <span class="news-date">${formatDate(item.date)}</span>
+                        <span class="news-category">${item.category}</span>
+                        <span class="news-title-text">${item.title}</span>
+                    </div>
+                    <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
                 </div>
-                <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-            </div>
-        `).join('');
-        announcementsList.innerHTML = announcementsHTML;
+            `).join('');
+        } else {
+            announcementsList.innerHTML = `
+                <div class="news-empty">
+                    <p class="news-empty-text">現在、お知らせはありません。</p>
+                </div>`;
+        }
     }
 
     // 最新ニュースリスト
     const latestNewsList = document.getElementById('latestNewsList');
-    if (latestNewsList && Array.isArray(latestNews)) {
-        const latestNewsHTML = latestNews.slice(0, 5).map(item => `
-            <a href="${item.link || '#'}" class="news-item-simple" target="_blank" rel="noopener noreferrer">
-                <div class="news-item-left">
-                    <span class="news-category">${item.category}</span>
-                    <span class="news-title-text">${item.title}</span>
-                </div>
-                <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-        `).join('');
-        latestNewsList.innerHTML = latestNewsHTML;
+    if (latestNewsList) {
+        const news = Array.isArray(latestNews) ? latestNews : [];
+        if (news.length > 0) {
+            latestNewsList.innerHTML = news.map(item => `
+                <a href="${item.link || '#'}" class="news-item-simple" target="_blank" rel="noopener noreferrer">
+                    <div class="news-item-left">
+                        <span class="news-date">${formatDate(item.date)}</span>
+                        <span class="news-category">${item.category}</span>
+                        <span class="news-title-text">${item.title}</span>
+                    </div>
+                    <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            `).join('');
+        } else {
+            latestNewsList.innerHTML = `
+                <div class="news-empty">
+                    <p class="news-empty-text">現在、最新ニュースはありません。</p>
+                </div>`;
+        }
     }
 }
 

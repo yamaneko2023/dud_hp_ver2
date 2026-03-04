@@ -212,16 +212,8 @@
 
             <div class="news-column">
                 <h3 class="news-column-title">最新ニュース</h3>
-                <div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); border-radius: 15px;">
-                    <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <svg style="width: 30px; height: 30px; color: white;" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                    </div>
-                    <h4 style="font-size: 1.2rem; font-weight: 700; color: #1f2937; margin-bottom: 10px;">リニューアル中</h4>
-                    <p style="font-size: 0.95rem; color: #6b7280; line-height: 1.7;">
-                        現在、最新ニュースセクションを<br>リニューアル準備中です。<br>しばらくお待ちください。
-                    </p>
+                <div class="news-list" id="latestNewsList">
+                    <!-- JavaScriptで動的に生成 -->
                 </div>
             </div>
         </div>
@@ -419,7 +411,7 @@
 <!-- JavaScriptにデータを渡す -->
 <script>
 const announcements = <?php echo $announcements_json; ?>;
-const latestNews = []; // リニューアル中のため空配列
+const latestNews = <?php echo $tech_news_json; ?>;
 </script>
 
 </main>

@@ -3333,43 +3333,44 @@ video {
 }
 
 .hero-title-large {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 4.5rem;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.2;
     color: white;
     margin-bottom: 40px;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
-    text-stroke: 1px rgba(0, 0, 0, 0.8);
     text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.25),
-        0 4px 20px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
+        0 0 8px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.7),
+        0 8px 40px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
 }
 
 .hero-title-accent {
     display: block;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: white;
     margin-top: 20px;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
-    text-stroke: 1px rgba(0, 0, 0, 0.8);
     text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.25),
-        0 4px 20px rgba(0, 0, 0, 0.2);
+        0 0 8px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.7),
+        0 8px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle-large {
-    font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 2rem;
     color: white;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 60px;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
-    text-stroke: 1px rgba(0, 0, 0, 0.8);
     text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.25),
-        0 4px 20px rgba(0, 0, 0, 0.2);
+        0 0 8px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.7),
+        0 8px 40px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
 }
 
 .hero-cta-group {
@@ -3798,6 +3799,43 @@ video {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* カスタムスクロールバー */
+.news-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-list::-webkit-scrollbar-track {
+    background: rgba(99, 102, 241, 0.05);
+    border-radius: 3px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 3px;
+}
+
+.news-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+}
+
+/* 空データ時の表示 */
+.news-empty {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(99, 102, 241, 0.03);
+    border: 1px dashed rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+}
+
+.news-empty-text {
+    font-size: 1rem;
+    color: #9ca3af;
+    line-height: 1.8;
 }
 
 .news-item-simple {
@@ -4267,28 +4305,32 @@ video {
         0 2px 20px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* ヒーローセクションのテキスト - 軽い影 */
+/* ヒーローセクションのテキスト - 視認性確保の影 */
 .hero-title-large {
     text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.25),
-        0 4px 20px rgba(0, 0, 0, 0.2) !important;
+        0 0 8px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.7),
+        0 8px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
 .hero-title-accent {
     color: white !important;
     text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.25),
-        0 4px 20px rgba(0, 0, 0, 0.2) !important;
+        0 0 8px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.7),
+        0 8px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
 .hero-subtitle-large {
     font-size: 2rem !important;
-    font-weight: 700 !important;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8) !important;
-    text-stroke: 1px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 500 !important;
     text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.25),
-        0 4px 20px rgba(0, 0, 0, 0.2) !important;
+        0 0 8px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.7),
+        0 8px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* ボタンを統一（両方ともプライマリスタイル） */
@@ -4613,6 +4655,10 @@ video {
     .news-columns {
         grid-template-columns: 1fr !important;
         gap: 40px !important;
+    }
+
+    .news-list {
+        max-height: 300px !important;
     }
 
     .news-column-title {
@@ -5021,16 +5067,16 @@ video {
     padding: 2rem 40px !important;
 }
 
-/* Larger footer links */
+/* Footer links */
 .footer-links a {
-    font-size: 1.4rem !important;
-    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    font-weight: 400 !important;
 }
 
-/* Larger copyright text */
+/* Copyright text */
 .footer p {
-    font-size: 1.2rem !important;
-    font-weight: 500 !important;
+    font-size: 0.8rem !important;
+    font-weight: 400 !important;
 }
 
 /* Tablet adjustments */
@@ -5038,13 +5084,13 @@ video {
     .footer .container {
         padding: 2rem 30px !important;
     }
-    
+
     .footer-links a {
-        font-size: 1.3rem !important;
+        font-size: 0.85rem !important;
     }
-    
+
     .footer p {
-        font-size: 1.1rem !important;
+        font-size: 0.8rem !important;
     }
 }
 
@@ -5053,13 +5099,13 @@ video {
     .footer .container {
         padding: 1.5rem 20px !important;
     }
-    
+
     .footer-links a {
-        font-size: 1.15rem !important;
+        font-size: 0.8rem !important;
     }
-    
+
     .footer p {
-        font-size: 1rem !important;
+        font-size: 0.75rem !important;
     }
 }
 
