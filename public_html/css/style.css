@@ -3823,6 +3823,14 @@ video {
     background: rgba(99, 102, 241, 0.5);
 }
 
+/* 取得日時の表示 */
+.news-fetched-at {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9ca3af;
+    margin-left: 12px;
+}
+
 /* 空データ時の表示 */
 .news-empty {
     text-align: center;

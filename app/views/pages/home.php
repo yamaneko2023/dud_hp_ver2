@@ -211,7 +211,7 @@
             </div>
 
             <div class="news-column">
-                <h3 class="news-column-title">最新ニュース</h3>
+                <h3 class="news-column-title">最新ニュース<span class="news-fetched-at" id="newsFetchedAt"></span></h3>
                 <div class="news-list" id="latestNewsList">
                     <!-- JavaScriptで動的に生成 -->
                 </div>

@@ -1,102 +1,106 @@
-[
-  {
-    "id": 1,
-    "date": "2026-02-25",
-    "category": "AI",
-    "title": "今のClaude Codeができることをざっくり解説",
-    "link": "https://qiita.com/official-columns/news/2026-02-25/",
-    "source": "Qiita",
-    "type": "article",
-    "auto_generated": true
-  },
-  {
-    "id": 2,
-    "date": "2026-02-25",
-    "category": "AI",
-    "title": "2026年に注目すべき人工知能の10のトレンド",
-    "link": "https://botpress.com/ja/blog/top-artificial-intelligence-trends",
-    "source": "Botpress",
-    "type": "article",
-    "auto_generated": true
-  },
-  {
-    "id": 3,
-    "date": "2026-02-25",
-    "category": "AI",
-    "title": "2026年のAIとテクノロジーを形作るトレンド",
-    "link": "https://www.ibm.com/jp-ja/think/news/ai-tech-trends-predictions-2026",
-    "source": "IBM",
-    "type": "article",
-    "auto_generated": true
-  },
-  {
-    "id": 4,
-    "date": "2026-02-25",
-    "category": "AI",
-    "title": "AIの未来: 2026年に注目すべき7つのトレンド",
-    "link": "https://news.microsoft.com/source/asia/features/ai-whats-next-in-ai-7-trends-to-watch-in-2026-textin2020262c20ai20wontresearch20colleagues2c20lee20says/?lang=ja",
-    "source": "Microsoft",
-    "type": "article",
-    "auto_generated": true
-  },
-  {
-    "id": 5,
-    "date": "2026-02-10",
-    "category": "AI",
-    "title": "Claude CodeはGitHubの公開コミットの4％を占めている",
-    "link": "https://gigazine.net/news/20260210-claude-code-github-commits-4-percent-20-percent/",
-    "source": "GIGAZINE",
-    "type": "article",
-    "auto_generated": true
-  },
-  {
-    "id": 6,
-    "date": "2026-02-25",
-    "category": "テクノロジー",
-    "title": "知らないと遅れる最先端技術5選",
-    "link": "https://www.octoparse.jp/blog/top-10-technology-trends-for-2023-you-must-know-about",
-    "source": "Octoparse",
-    "type": "article",
-    "auto_generated": true
-  },
-  {
-    "id": 7,
-    "date": "2026-02-18",
-    "category": "AI",
-    "title": "AIは仕事奪うのか 人工知能研究者・今井翔太さんが中日懇話会で講演",
-    "link": "https://biz.chunichi.co.jp/news/article/10/121658/",
-    "source": "中日新聞",
-    "type": "article",
-    "auto_generated": true
-  },
-  {
-    "id": 8,
-    "date": "2026-02-25",
-    "category": "AI",
-    "title": "DXコンサルティング会社が解説する2026年AIトレンド13選",
-    "link": "https://www.scribd.com/document/995653463/DX%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%AB%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E4%BC%9A%E7%A4%BE%E3%81%8C%E8%A7%A3%E8%AA%AC%E3%81%99%E3%82%8B2026%E5%B9%B4AI%E3%83%88%E3%83%AC%E3%83%B3%E3%83%8913%E9%81%B8-%E4%BC%81%E6%A5%AD%E3%81%8C%E5%8F%96%E3%82%8B%E3%81%B9%E3%81%8D%E9%96%8B%E7%99%BA-%E5%B0%8E%E5%85%A5%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3",
-    "source": "Scribd",
-    "type": "article",
-    "auto_generated": true
-  },
-  {
-    "id": 9,
-    "date": "2026-02-20",
-    "category": "AI",
-    "title": "ビジネスマンが使うべきAI Claude Code",
-    "link": "https://www.youtube.com/watch?v=ca5HjfclrjE",
-    "source": "テレ東 AI アカデミー",
-    "type": "youtube",
-    "auto_generated": true
-  },
-  {
-    "id": 10,
-    "date": "2026-02-25",
-    "category": "AI",
-    "title": "2026年AIは「話す」から「稼ぐ」へ",
-    "link": "https://www.youtube.com/watch?v=sklfz7Tv1JY",
-    "source": "YouTube",
-    "type": "youtube",
-    "auto_generated": true
-  }
-]
+{
+  "fetched_at": "2026-02-25 12:00",
+  "count": 10,
+  "items": [
+    {
+      "id": 1,
+      "date": "2026-02-25",
+      "category": "AI",
+      "title": "今のClaude Codeができることをざっくり解説",
+      "link": "https://qiita.com/official-columns/news/2026-02-25/",
+      "source": "Qiita",
+      "type": "article",
+      "auto_generated": true
+    },
+    {
+      "id": 2,
+      "date": "2026-02-25",
+      "category": "AI",
+      "title": "2026年に注目すべき人工知能の10のトレンド",
+      "link": "https://botpress.com/ja/blog/top-artificial-intelligence-trends",
+      "source": "Botpress",
+      "type": "article",
+      "auto_generated": true
+    },
+    {
+      "id": 3,
+      "date": "2026-02-25",
+      "category": "AI",
+      "title": "2026年のAIとテクノロジーを形作るトレンド",
+      "link": "https://www.ibm.com/jp-ja/think/news/ai-tech-trends-predictions-2026",
+      "source": "IBM",
+      "type": "article",
+      "auto_generated": true
+    },
+    {
+      "id": 4,
+      "date": "2026-02-25",
+      "category": "AI",
+      "title": "AIの未来: 2026年に注目すべき7つのトレンド",
+      "link": "https://news.microsoft.com/source/asia/features/ai-whats-next-in-ai-7-trends-to-watch-in-2026-textin2020262c20ai20wontresearch20colleagues2c20lee20says/?lang=ja",
+      "source": "Microsoft",
+      "type": "article",
+      "auto_generated": true
+    },
+    {
+      "id": 5,
+      "date": "2026-02-10",
+      "category": "AI",
+      "title": "Claude CodeはGitHubの公開コミットの4％を占めている",
+      "link": "https://gigazine.net/news/20260210-claude-code-github-commits-4-percent-20-percent/",
+      "source": "GIGAZINE",
+      "type": "article",
+      "auto_generated": true
+    },
+    {
+      "id": 6,
+      "date": "2026-02-25",
+      "category": "テクノロジー",
+      "title": "知らないと遅れる最先端技術5選",
+      "link": "https://www.octoparse.jp/blog/top-10-technology-trends-for-2023-you-must-know-about",
+      "source": "Octoparse",
+      "type": "article",
+      "auto_generated": true
+    },
+    {
+      "id": 7,
+      "date": "2026-02-18",
+      "category": "AI",
+      "title": "AIは仕事奪うのか 人工知能研究者・今井翔太さんが中日懇話会で講演",
+      "link": "https://biz.chunichi.co.jp/news/article/10/121658/",
+      "source": "中日新聞",
+      "type": "article",
+      "auto_generated": true
+    },
+    {
+      "id": 8,
+      "date": "2026-02-25",
+      "category": "AI",
+      "title": "DXコンサルティング会社が解説する2026年AIトレンド13選",
+      "link": "https://www.scribd.com/document/995653463/DX%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%AB%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E4%BC%9A%E7%A4%BE%E3%81%8C%E8%A7%A3%E8%AA%AC%E3%81%99%E3%82%8B2026%E5%B9%B4AI%E3%83%88%E3%83%AC%E3%83%B3%E3%83%8913%E9%81%B8-%E4%BC%81%E6%A5%AD%E3%81%8C%E5%8F%96%E3%82%8B%E3%81%B9%E3%81%8D%E9%96%8B%E7%99%BA-%E5%B0%8E%E5%85%A5%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3",
+      "source": "Scribd",
+      "type": "article",
+      "auto_generated": true
+    },
+    {
+      "id": 9,
+      "date": "2026-02-20",
+      "category": "AI",
+      "title": "ビジネスマンが使うべきAI Claude Code",
+      "link": "https://www.youtube.com/watch?v=ca5HjfclrjE",
+      "source": "テレ東 AI アカデミー",
+      "type": "youtube",
+      "auto_generated": true
+    },
+    {
+      "id": 10,
+      "date": "2026-02-25",
+      "category": "AI",
+      "title": "2026年AIは「話す」から「稼ぐ」へ",
+      "link": "https://www.youtube.com/watch?v=sklfz7Tv1JY",
+      "source": "YouTube",
+      "type": "youtube",
+      "auto_generated": true
+    }
+  ]
+}

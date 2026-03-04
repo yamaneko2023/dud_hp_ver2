@@ -27,8 +27,9 @@ function initNewsLists() {
     // お知らせリスト
     const announcementsList = document.getElementById('announcementsList');
     if (announcementsList) {
-        const published = Array.isArray(announcements)
-            ? announcements.filter(item => item.published === true) : [];
+        const published = (Array.isArray(announcements)
+            ? announcements.filter(item => item.published === true) : []
+        ).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
         if (published.length > 0) {
             announcementsList.innerHTML = published.map(item => `
                 <div class="news-item-simple">
@@ -50,12 +51,24 @@ function initNewsLists() {
         }
     }
 
-    // 最新ニュースリスト
+    // 最新ニュースリスト（ラッパーオブジェクト対応）
     const latestNewsList = document.getElementById('latestNewsList');
     if (latestNewsList) {
-        const news = Array.isArray(latestNews) ? latestNews : [];
-        if (news.length > 0) {
-            latestNewsList.innerHTML = news.map(item => `
+        const newsItems = ((latestNews && Array.isArray(latestNews.items))
+            ? latestNews.items
+            : (Array.isArray(latestNews) ? latestNews : [])
+        ).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+        // 取得日時を表示
+        const fetchedAtEl = document.getElementById('newsFetchedAt');
+        if (fetchedAtEl && latestNews && latestNews.fetched_at) {
+            const d = new Date(latestNews.fetched_at.replace(' ', 'T'));
+            const fa = `${d.getFullYear()}年${String(d.getMonth()+1).padStart(2,'0')}月${String(d.getDate()).padStart(2,'0')}日 ${d.getHours()}時`;
+            fetchedAtEl.textContent = `${fa} 取得`;
+        }
+
+        if (newsItems.length > 0) {
+            latestNewsList.innerHTML = newsItems.map(item => `
                 <a href="${item.link || '#'}" class="news-item-simple" target="_blank" rel="noopener noreferrer">
                     <div class="news-item-left">
                         <span class="news-date">${formatDate(item.date)}</span>
