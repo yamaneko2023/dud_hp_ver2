@@ -114,10 +114,6 @@
                 <p class="problem-desc">Webサイト、簡易システム、データ分析など、小さな案件でも柔軟に対応。まずはお気軽にご相談ください。</p>
             </div>
         </div>
-
-        <div class="section-cta">
-            <a href="/contact" class="btn-primary-large">まずは無料相談から始める</a>
-        </div>
     </div>
 </section>
 
@@ -216,10 +212,6 @@
                     <!-- JavaScriptで動的に生成 -->
                 </div>
             </div>
-        </div>
-
-        <div class="section-cta">
-            <a href="#" class="btn-secondary-large">すべて見る</a>
         </div>
     </div>
 </section>
