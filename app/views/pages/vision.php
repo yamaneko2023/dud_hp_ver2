@@ -19,7 +19,10 @@
     <!-- 社会への貢献 -->
     <section class="vision-section vision-society">
         <div class="vision-image-container">
-            <img src="/img/2_vision_contribution_to_society.png" alt="社会への貢献" class="vision-image" loading="lazy">
+            <picture>
+                <source srcset="/img/2_vision_contribution_to_society.webp" type="image/webp">
+                <img src="/img/2_vision_contribution_to_society.png" alt="社会への貢献" class="vision-image" loading="lazy">
+            </picture>
         </div>
         <div class="container">
             <div class="vision-content">
@@ -37,7 +40,10 @@
     <!-- お客様との共創 -->
     <section class="vision-section vision-customers">
         <div class="vision-image-container">
-            <img src="/img/3_vision_co-creation_with_our_customers,png.png" alt="お客様との共創" class="vision-image" loading="lazy">
+            <picture>
+                <source srcset="/img/3_vision_co-creation_with_our_customers.webp" type="image/webp">
+                <img src="/img/3_vision_co-creation_with_our_customers,png.png" alt="お客様との共創" class="vision-image" loading="lazy">
+            </picture>
         </div>
         <div class="container">
             <div class="vision-content">
@@ -56,7 +62,10 @@
     <!-- 私たちの成長 -->
     <section class="vision-section vision-growth">
         <div class="vision-image-container">
-            <img src="/img/4_vizion_our_growth.png.png" alt="私たちの成長" class="vision-image" loading="lazy">
+            <picture>
+                <source srcset="/img/4_vizion_our_growth.webp" type="image/webp">
+                <img src="/img/4_vizion_our_growth.png.png" alt="私たちの成長" class="vision-image" loading="lazy">
+            </picture>
         </div>
         <div class="container">
             <div class="vision-content">

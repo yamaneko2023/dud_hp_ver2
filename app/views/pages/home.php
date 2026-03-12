@@ -260,7 +260,10 @@
                 <a href="/company" class="btn-primary-large">会社情報を見る</a>
             </div>
             <div class="company-image">
-                <img src="/img/home_company.png" alt="横浜みなとみらい - DIG-UP DATAオフィスエリア" class="company-photo" loading="lazy">
+                <picture>
+                    <source srcset="/img/home_company.webp" type="image/webp">
+                    <img src="/img/home_company.png" alt="横浜みなとみらい - DIG-UP DATAオフィスエリア" class="company-photo" loading="lazy">
+                </picture>
             </div>
         </div>
     </div>
@@ -280,7 +283,10 @@
         </div>
 
         <div class="recruit-image">
-            <img src="/img/home_team.png" alt="DIG-UP DATAのチーム" class="team-photo" loading="lazy">
+            <picture>
+                <source srcset="/img/home_team.webp" type="image/webp">
+                <img src="/img/home_team.png" alt="DIG-UP DATAのチーム" class="team-photo" loading="lazy">
+            </picture>
         </div>
 
         <div class="section-cta">
