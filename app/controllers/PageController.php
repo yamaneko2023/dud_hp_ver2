@@ -31,24 +31,27 @@ class PageController {
         require APP_DIR . '/views/layouts/footer.php';
     }
 
+    /**
+     * JSONデータファイルを読み込む
+     *
+     * @param string $filename data/ 内のファイル名
+     * @param string $fallback 読み込み失敗時のデフォルト値
+     * @return string JSON文字列
+     */
+    private function loadJsonData($filename, $fallback = '[]') {
+        $path = DATA_DIR . '/' . $filename;
+        return file_exists($path) ? file_get_contents($path) : $fallback;
+    }
+
     private function executePageLogic($pageKey) {
         switch ($pageKey) {
             case 'home':
-                // お知らせJSON読み込み（DATA_DIR使用）
-                $json_path = DATA_DIR . '/announcements.json';
-                $this->viewData['announcements_json'] = file_exists($json_path)
-                    ? file_get_contents($json_path)
-                    : '[]';
-                // 最新ニュースJSON読み込み
-                $news_path = DATA_DIR . '/tech_news.json';
-                $this->viewData['tech_news_json'] = file_exists($news_path)
-                    ? file_get_contents($news_path)
-                    : '[]';
+                $this->viewData['announcements_json'] = $this->loadJsonData('announcements.json');
+                $this->viewData['tech_news_json'] = $this->loadJsonData('tech_news.json');
                 break;
 
             case 'announcements':
-                $json_path = DATA_DIR . '/announcements.json';
-                $raw = file_exists($json_path) ? file_get_contents($json_path) : '[]';
+                $raw = $this->loadJsonData('announcements.json');
                 $all = json_decode($raw, true) ?: [];
 
                 // published のみ、日付降順

@@ -5,23 +5,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #8b5cf6;
-    --accent-color: #ec4899;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f9fafb;
-    --white: #ffffff;
-    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
 body {
     font-family: 'Noto Sans JP', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     color: var(--text-dark);
@@ -159,6 +142,9 @@ video {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .hamburger span {
@@ -593,7 +579,7 @@ video {
 .info-item {
     display: flex;
     padding: 1.5rem 0;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .info-item:last-child {
@@ -650,7 +636,7 @@ video {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    border: 2px solid #e5e7eb;
+    border: 2px solid var(--border-light);
     border-radius: 10px;
     font-family: inherit;
     font-size: 1rem;
@@ -1097,7 +1083,7 @@ video {
 .form-group select {
     width: 100%;
     padding: 1rem;
-    border: 2px solid #e5e7eb;
+    border: 2px solid var(--border-light);
     border-radius: 10px;
     font-family: inherit;
     font-size: 1rem;
@@ -1219,7 +1205,7 @@ video {
 
 .confirm-row {
     display: flex;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--border-light);
     padding: 1.5rem;
 }
 
@@ -1914,7 +1900,7 @@ video {
     background: var(--bg-light);
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    border: 2px solid #e5e7eb;
+    border: 2px solid var(--border-light);
     transition: all 0.3s ease;
 }
 
@@ -1977,7 +1963,7 @@ video {
 
 .vision-cta-section {
     padding: 80px 0 !important;
-    background: #f5f7fa !important;
+    background: var(--bg-section) !important;
     text-align: center !important;
 }
 
@@ -3606,7 +3592,7 @@ video {
 
 /* 3. サービスセクション */
 .services-section {
-    background: #f5f7fa;
+    background: var(--bg-section);
     padding: 120px 0;
     position: relative;
     min-height: 100vh;
@@ -4019,7 +4005,7 @@ video {
     max-width: 800px;
     margin: 0 auto;
     aspect-ratio: 16/9;
-    background: #f5f7fa;
+    background: var(--bg-section);
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -4052,7 +4038,7 @@ video {
 .breadcrumb {
     background: #f9fafb;
     padding: 12px 0;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--border-light);
     font-size: 0.875rem;
 }
 
@@ -4119,7 +4105,7 @@ video {
 
 /* 8. フッターCTA */
 .footer-cta-section {
-    background: #f5f7fa;
+    background: var(--bg-section);
     padding: 120px 0;
     position: relative;
     overflow: hidden;
@@ -4289,12 +4275,12 @@ video {
 }
 
 .company-section {
-    background: #f5f7fa !important;
+    background: var(--bg-section) !important;
 }
 
 /* フッターCTAの背景 */
 .footer-cta-section {
-    background: #f5f7fa !important;
+    background: var(--bg-section) !important;
 }
 
 
@@ -4464,7 +4450,7 @@ video {
 
 .btn-white-large {
     background: white !important;
-    color: #1e40af !important;
+    color: var(--color-blue-dark) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
     border: 2px solid transparent !important;
 }
@@ -4799,7 +4785,7 @@ video {
 .vision-section .section-title-large {
     font-size: 1.1rem !important;
     font-weight: 800 !important;
-    color: #1e40af !important;
+    color: var(--color-blue-dark) !important;
     letter-spacing: 4px !important;
     margin-bottom: 20px !important;
     text-shadow: 0 2px 10px rgba(30, 64, 175, 0.3) !important;
@@ -5592,7 +5578,7 @@ video {
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 20px;
     font-size: 0.8rem;
-    color: #d4af37;
+    color: var(--color-gold);
     font-weight: 700;
 }
 
@@ -5603,13 +5589,13 @@ video {
     line-height: 1.5;
     margin-bottom: 24px;
     padding-left: 16px;
-    border-left: 3px solid #d4af37;
+    border-left: 3px solid var(--color-gold);
 }
 
 .ann-featured-content h3 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #d4af37;
+    color: var(--color-gold);
     margin: 24px 0 10px;
 }
 
@@ -5783,7 +5769,7 @@ video {
         font-size: 1.35rem;
         border-left: none;
         padding-left: 0;
-        border-bottom: 2px solid #d4af37;
+        border-bottom: 2px solid var(--color-gold);
         padding-bottom: 12px;
     }
 
@@ -5825,5 +5811,40 @@ video {
 
     .ann-list-section {
         padding: 50px 0;
+    }
+}
+
+/* ===== アクセシビリティ ===== */
+
+/* フォーカス可視スタイル */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.ann-year-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* モーション軽減 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero-video-bg {
+        display: none;
     }
 }

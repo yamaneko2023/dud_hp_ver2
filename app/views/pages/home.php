@@ -433,10 +433,8 @@
 </script>
 
 <!-- JavaScriptにデータを渡す -->
-<script>
-const announcements = <?php echo $announcements_json; ?>;
-const latestNews = <?php echo $tech_news_json; ?>;
-</script>
+<script type="application/json" id="announcements-data"><?php echo $announcements_json; ?></script>
+<script type="application/json" id="latest-news-data"><?php echo $tech_news_json; ?></script>
 
 </main>
 <!-- /メインコンテンツ -->

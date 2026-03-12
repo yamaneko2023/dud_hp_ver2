@@ -36,6 +36,8 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
     <meta property="og:type" content="<?php echo $ogp_type; ?>">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:image" content="<?php echo htmlspecialchars($ogp_image, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="<?php echo COMPANY_NAME_JP; ?>">
     <meta property="og:locale" content="ja_JP">
 
@@ -49,6 +51,7 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
     <link rel="icon" type="image/svg+xml" href="/img/company_logo.svg">
 
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/variables.css">
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- Google Fonts -->
@@ -82,7 +85,7 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
                 </picture>
                 <span class="navbar-award-text">に選ばれました</span>
             </a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/vision">Our Vision</a></li>
                 <li><a href="/services">Services</a></li>
@@ -91,11 +94,11 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
                 <li><a href="/careers">Careers</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="メニューを開く">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 

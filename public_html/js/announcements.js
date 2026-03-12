@@ -6,8 +6,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const featuredSection = document.querySelector('.ann-featured-section');
     const listContainer = document.getElementById('announcementsListContainer');
+    const announcementsList = DudUtils.loadJsonData('announcements-list-data');
 
-    if (!featuredSection || !listContainer) return;
+    if (!listContainer) return;
 
     // 年ごとにグループ化してリストを生成
     renderAnnouncementsByYear();
@@ -41,9 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
         listContainer.innerHTML = `
             <div class="ann-layout">
                 <!-- 左側: 年リンク -->
-                <div class="ann-year-nav">
+                <div class="ann-year-nav" role="tablist" aria-label="年ごとのお知らせ">
                     ${years.map((year, index) => `
-                        <a href="#" class="ann-year-link ${index === 0 ? 'active' : ''}" data-year="${year}">
+                        <a href="#" class="ann-year-link ${index === 0 ? 'active' : ''}"
+                           data-year="${year}"
+                           role="tab"
+                           aria-selected="${index === 0}"
+                           aria-controls="ann-panel-${year}"
+                           tabindex="${index === 0 ? '0' : '-1'}">
                             ${year}年
                         </a>
                     `).join('')}
@@ -52,21 +58,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 <!-- 右側: リスト -->
                 <div class="ann-year-content">
                     ${years.map((year, index) => `
-                        <div class="ann-year-group ${index === 0 ? 'active' : ''}" data-year="${year}">
+                        <div class="ann-year-group ${index === 0 ? 'active' : ''}"
+                             data-year="${year}"
+                             id="ann-panel-${year}"
+                             role="tabpanel"
+                             aria-labelledby="ann-tab-${year}">
                             <div class="ann-list">
                                 ${groupedByYear[year].map((item) => {
                                     const hasLink = item.link && item.link.trim() !== '';
                                     const tag = hasLink ? 'a' : 'div';
-                                    const linkAttr = hasLink ? ` href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer"` : '';
-                                    const dateFormatted = formatDate(item.date);
+                                    const linkAttr = hasLink ? ` href="${DudUtils.escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer"` : '';
+                                    const dateFormatted = DudUtils.formatDate(item.date);
                                     const dataIndex = announcementsList.indexOf(item);
 
                                     return `
                                         <${tag}${linkAttr} class="news-item-simple" data-index="${dataIndex}">
                                             <div class="news-item-left">
-                                                <span class="news-date">${escapeHtml(dateFormatted)}</span>
-                                                <span class="news-category">${escapeHtml(item.category || '')}</span>
-                                                <span class="news-title-text">${escapeHtml(item.title || '')}</span>
+                                                <span class="news-date">${DudUtils.escapeHtml(dateFormatted)}</span>
+                                                <span class="news-category">${DudUtils.escapeHtml(item.category || '')}</span>
+                                                <span class="news-title-text">${DudUtils.escapeHtml(item.title || '')}</span>
                                             </div>
                                             ${hasLink ? `
                                                 <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -89,26 +99,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * 年リンクのクリックイベントを設定
+     * 年リンクのクリック・キーボードイベントを設定
      */
     function attachYearTabListeners() {
         const yearLinks = document.querySelectorAll('.ann-year-link');
         const yearGroups = document.querySelectorAll('.ann-year-group');
 
+        function selectTab(link) {
+            const selectedYear = link.getAttribute('data-year');
+
+            yearLinks.forEach(l => {
+                l.classList.remove('active');
+                l.setAttribute('aria-selected', 'false');
+                l.setAttribute('tabindex', '-1');
+            });
+            yearGroups.forEach(g => g.classList.remove('active'));
+
+            link.classList.add('active');
+            link.setAttribute('aria-selected', 'true');
+            link.setAttribute('tabindex', '0');
+            link.focus();
+
+            const selectedGroup = document.querySelector(`.ann-year-group[data-year="${selectedYear}"]`);
+            if (selectedGroup) {
+                selectedGroup.classList.add('active');
+            }
+        }
+
         yearLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault(); // リンクのデフォルト動作を無効化
-                const selectedYear = link.getAttribute('data-year');
+                e.preventDefault();
+                selectTab(link);
+            });
 
-                // 全てのリンクとグループから active を削除
-                yearLinks.forEach(l => l.classList.remove('active'));
-                yearGroups.forEach(g => g.classList.remove('active'));
+            // キーボードナビゲーション（矢印キー対応）
+            link.addEventListener('keydown', (e) => {
+                const links = Array.from(yearLinks);
+                const currentIndex = links.indexOf(link);
+                let targetIndex = -1;
 
-                // 選択されたリンクとグループに active を追加
-                link.classList.add('active');
-                const selectedGroup = document.querySelector(`.ann-year-group[data-year="${selectedYear}"]`);
-                if (selectedGroup) {
-                    selectedGroup.classList.add('active');
+                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    targetIndex = (currentIndex + 1) % links.length;
+                } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    targetIndex = (currentIndex - 1 + links.length) % links.length;
+                } else if (e.key === 'Home') {
+                    e.preventDefault();
+                    targetIndex = 0;
+                } else if (e.key === 'End') {
+                    e.preventDefault();
+                    targetIndex = links.length - 1;
+                }
+
+                if (targetIndex >= 0) {
+                    selectTab(links[targetIndex]);
                 }
             });
         });
@@ -138,6 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
      * お知らせの詳細を表示
      */
     function showAnnouncementDetail(announcement) {
+        if (!featuredSection) return;
+
         // 画像を更新
         const imgElement = featuredSection.querySelector('.ann-featured-image img');
         if (imgElement && announcement.image) {
@@ -200,27 +247,5 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth',
             block: 'start'
         });
-    }
-
-    /**
-     * 日付をフォーマット (YYYY.MM.DD)
-     */
-    function formatDate(dateString) {
-        if (!dateString) return '';
-        const date = new Date(dateString);
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        return `${year}.${month}.${day}`;
-    }
-
-    /**
-     * HTMLエスケープ
-     */
-    function escapeHtml(text) {
-        if (!text) return '';
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
     }
 });

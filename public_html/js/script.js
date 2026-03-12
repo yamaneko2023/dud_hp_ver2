@@ -3,8 +3,9 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
 hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    const isOpen = navMenu.classList.toggle('active');
     hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
 });
 
 // メニューリンクをクリックしたらメニューを閉じる
@@ -12,15 +13,25 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     });
 });
 
+// Escapeキーでメニューを閉じる
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+    }
+});
 
-// スクロール時のナビゲーションバーのスタイル変更
+
+// スクロール時のナビゲーションバーのスタイル変更 + パララックス（統合・throttle適用）
 const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', DudUtils.throttle(() => {
     const currentScroll = window.pageYOffset;
 
     if (currentScroll > 100) {
@@ -29,8 +40,13 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
     }
 
-    lastScroll = currentScroll;
-});
+    // パララックス効果（浮遊カード）
+    const cards = document.querySelectorAll('.floating-card');
+    cards.forEach((card, index) => {
+        const speed = 0.5 + (index * 0.2);
+        card.style.transform = `translateY(${currentScroll * speed}px)`;
+    });
+}, 16)); // ~60fps
 
 // スクロール時の要素のフェードイン
 const observerOptions = {
@@ -92,17 +108,6 @@ document.querySelectorAll('.vision-content, .triangle-content, .statement-conten
     visionObserver.observe(el);
 });
 
-// パララックス効果（浮遊カード）
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const cards = document.querySelectorAll('.floating-card');
-
-    cards.forEach((card, index) => {
-        const speed = 0.5 + (index * 0.2);
-        card.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
 // ページ読み込み時のアニメーション
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
@@ -122,4 +127,3 @@ document.addEventListener('DOMContentLoaded', () => {
         yearElement.textContent = new Date().getFullYear();
     }
 });
-

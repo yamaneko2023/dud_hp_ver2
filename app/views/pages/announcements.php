@@ -3,7 +3,7 @@
     <!-- ページヘッダー -->
     <section class="page-header">
         <video class="page-header-video" autoplay muted playsinline>
-            <source src="/video/header_bkground.mp4" type="video/mp4">
+            <source src="/video/header_announcements.mp4" type="video/mp4">
         </video>
         <div class="container">
             <h1 class="page-title">Announcements</h1>
@@ -71,10 +71,7 @@
         </div>
     </section>
 
-    <script>
-        // 全てのお知らせデータをJavaScriptに渡す
-        const announcementsList = <?= json_encode($announcements_list ?? []) ?>;
-    </script>
+    <script type="application/json" id="announcements-list-data"><?= json_encode($announcements_list ?? []) ?></script>
     <script src="/js/announcements.js"></script>
 
 </main>
