@@ -71,11 +71,23 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
                 <img src="/img/company_logo.svg" alt="DIG-UP DATA Inc." loading="eager">
                 <span class="company-name">DIG-UP DATA Inc.</span>
             </a>
+            <a href="https://madeinlocal.jp/category/companies/kanagawa079"
+               target="_blank" rel="noopener noreferrer"
+               class="navbar-award-badge">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/img/100sen/emblem.png">
+                    <img src="/img/100sen/emblem_horizontal.png"
+                         alt="神奈川100選 2026-2027"
+                         class="navbar-award-emblem">
+                </picture>
+                <span class="navbar-award-text">に選ばれました</span>
+            </a>
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/vision">Our Vision</a></li>
                 <li><a href="/services">Services</a></li>
                 <li><a href="/company">Company</a></li>
+                <li><a href="/announcements">News</a></li>
                 <li><a href="/careers">Careers</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>

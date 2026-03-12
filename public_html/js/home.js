@@ -32,7 +32,7 @@ function initNewsLists() {
         ).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
         if (published.length > 0) {
             announcementsList.innerHTML = published.map(item => `
-                <div class="news-item-simple">
+                <a href="/announcements" class="news-item-simple">
                     <div class="news-item-left">
                         <span class="news-date">${formatDate(item.date)}</span>
                         <span class="news-category">${item.category}</span>
@@ -41,7 +41,7 @@ function initNewsLists() {
                     <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
-                </div>
+                </a>
             `).join('');
         } else {
             announcementsList.innerHTML = `

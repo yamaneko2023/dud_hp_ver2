@@ -45,6 +45,29 @@ class PageController {
                     ? file_get_contents($news_path)
                     : '[]';
                 break;
+
+            case 'announcements':
+                $json_path = DATA_DIR . '/announcements.json';
+                $raw = file_exists($json_path) ? file_get_contents($json_path) : '[]';
+                $all = json_decode($raw, true) ?: [];
+
+                // published のみ、日付降順
+                $published = array_filter($all, fn($a) => ($a['published'] ?? false));
+                usort($published, fn($a, $b) => strcmp($b['date'] ?? '', $a['date'] ?? ''));
+
+                // ピン留め記事を取得（先頭1件）
+                $pinned = null;
+                foreach ($published as $item) {
+                    if ($item['pinned'] ?? false) {
+                        $pinned = $item;
+                        break;
+                    }
+                }
+
+                // リストには全てのお知らせを含める（ピン留め記事も含む）
+                $this->viewData['pinned_announcement'] = $pinned;
+                $this->viewData['announcements_list'] = $published;
+                break;
         }
     }
 
