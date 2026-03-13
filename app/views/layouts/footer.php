@@ -93,12 +93,6 @@
             token: 'OkBZ34JfRUjvuznX',
             isDev: false,
             baseUrl: 'https://udify.app',
-            containerProps: {
-                style: {
-                    right: '20px',
-                    bottom: '50%'
-                }
-            },
             draggable: false
         }
         console.log('Dify config loaded:', window.difyChatbotConfig);
@@ -112,7 +106,6 @@
     <style>
         #dify-chatbot-bubble-button {
             background-color: #1C64F2 !important;
-            transform: translateY(50%);
         }
         #dify-chatbot-bubble-window {
             width: 24rem !important;
