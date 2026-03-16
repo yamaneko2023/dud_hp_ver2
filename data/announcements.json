@@ -1,5 +1,22 @@
 [
     {
+        "id": 6,
+        "date": "2026-03-09",
+        "category": "お知らせ",
+        "title": "「神奈川を代表する企業100選 2026-2027」に選出されました",
+        "link": "https://madeinlocal.jp/category/companies/kanagawa079",
+        "published": true,
+        "pinned": true,
+        "image": "/img/100sen/certificate.png",
+        "body": [
+            { "type": "paragraph", "content": "株式会社DIG-UP DATAは、地方創生メディア「Made In Local」が主催する「神奈川を代表する企業100選 2026-2027」に選出されました。" },
+            { "type": "heading", "content": "「神奈川を代表する企業100選」とは" },
+            { "type": "paragraph", "content": "「神奈川を代表する企業100選」は、地方創生メディア「Made In Local」が、神奈川県内で地域経済に貢献し、独自の強みを持つ企業を厳選して紹介するプログラムです。" },
+            { "type": "heading", "content": "選出の背景" },
+            { "type": "paragraph", "content": "当社はAI・データ分析・DX/AX推進支援を通じて、個人から企業まで幅広い規模のお客様のビジネス変革を支援してまいりました。横浜を拠点に、テクノロジーの力で社会課題の解決に取り組む姿勢が評価され、今回の選出に至りました。" }
+        ]
+    },
+    {
         "id": 5,
         "date": "2026-03-04",
         "category": "お知らせ",

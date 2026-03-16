@@ -31,19 +31,45 @@ class PageController {
         require APP_DIR . '/views/layouts/footer.php';
     }
 
+    /**
+     * JSONデータファイルを読み込む
+     *
+     * @param string $filename data/ 内のファイル名
+     * @param string $fallback 読み込み失敗時のデフォルト値
+     * @return string JSON文字列
+     */
+    private function loadJsonData($filename, $fallback = '[]') {
+        $path = DATA_DIR . '/' . $filename;
+        return file_exists($path) ? file_get_contents($path) : $fallback;
+    }
+
     private function executePageLogic($pageKey) {
         switch ($pageKey) {
             case 'home':
-                // お知らせJSON読み込み（DATA_DIR使用）
-                $json_path = DATA_DIR . '/announcements.json';
-                $this->viewData['announcements_json'] = file_exists($json_path)
-                    ? file_get_contents($json_path)
-                    : '[]';
-                // 最新ニュースJSON読み込み
-                $news_path = DATA_DIR . '/tech_news.json';
-                $this->viewData['tech_news_json'] = file_exists($news_path)
-                    ? file_get_contents($news_path)
-                    : '[]';
+                $this->viewData['announcements_json'] = $this->loadJsonData('announcements.json');
+                $this->viewData['tech_news_json'] = $this->loadJsonData('tech_news.json');
+                break;
+
+            case 'announcements':
+                $raw = $this->loadJsonData('announcements.json');
+                $all = json_decode($raw, true) ?: [];
+
+                // published のみ、日付降順
+                $published = array_filter($all, fn($a) => ($a['published'] ?? false));
+                usort($published, fn($a, $b) => strcmp($b['date'] ?? '', $a['date'] ?? ''));
+
+                // ピン留め記事を取得（先頭1件）
+                $pinned = null;
+                foreach ($published as $item) {
+                    if ($item['pinned'] ?? false) {
+                        $pinned = $item;
+                        break;
+                    }
+                }
+
+                // リストには全てのお知らせを含める（ピン留め記事も含む）
+                $this->viewData['pinned_announcement'] = $pinned;
+                $this->viewData['announcements_list'] = $published;
                 break;
         }
     }

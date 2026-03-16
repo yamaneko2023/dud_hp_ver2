@@ -2,17 +2,12 @@
 // 新デザイン - Home.js
 // ========================================
 
-// データはPHPから渡されます（home.phpで定義）
-// - announcements: お知らせデータ
-// - latestNews: 最新ニュースデータ
-
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('=== HOME.JS START ===');
+    const announcements = DudUtils.loadJsonData('announcements-data');
+    const latestNews = DudUtils.loadJsonData('latest-news-data');
 
-    // データの存在確認
-    if (typeof announcements !== 'undefined' && typeof latestNews !== 'undefined') {
-        console.log('Data loaded successfully');
-        initNewsLists();
+    if (announcements && latestNews) {
+        initNewsLists(announcements, latestNews);
         initScrollAnimations();
     } else {
         console.error('Data not loaded');
@@ -23,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ニュースリストの初期化
 // ========================================
 
-function initNewsLists() {
+function initNewsLists(announcements, latestNews) {
     // お知らせリスト
     const announcementsList = document.getElementById('announcementsList');
     if (announcementsList) {
@@ -32,16 +27,16 @@ function initNewsLists() {
         ).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
         if (published.length > 0) {
             announcementsList.innerHTML = published.map(item => `
-                <div class="news-item-simple">
+                <a href="/announcements" class="news-item-simple">
                     <div class="news-item-left">
-                        <span class="news-date">${formatDate(item.date)}</span>
-                        <span class="news-category">${item.category}</span>
-                        <span class="news-title-text">${item.title}</span>
+                        <span class="news-date">${DudUtils.formatDate(item.date)}</span>
+                        <span class="news-category">${DudUtils.escapeHtml(item.category)}</span>
+                        <span class="news-title-text">${DudUtils.escapeHtml(item.title)}</span>
                     </div>
                     <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
-                </div>
+                </a>
             `).join('');
         } else {
             announcementsList.innerHTML = `
@@ -69,12 +64,12 @@ function initNewsLists() {
 
         if (newsItems.length > 0) {
             latestNewsList.innerHTML = newsItems.map(item => `
-                <a href="${item.link || '#'}" class="news-item-simple" target="_blank" rel="noopener noreferrer">
+                <a href="${DudUtils.escapeHtml(item.link) || '#'}" class="news-item-simple" target="_blank" rel="noopener noreferrer">
                     <div class="news-item-left">
-                        <span class="news-date">${formatDate(item.date)}</span>
-                        <span class="news-type">${formatType(item.type)}</span>
-                        <span class="news-category">${item.category}</span>
-                        <span class="news-title-text">${item.title}</span>
+                        <span class="news-date">${DudUtils.formatDate(item.date)}</span>
+                        <span class="news-type">${DudUtils.formatType(item.type)}</span>
+                        <span class="news-category">${DudUtils.escapeHtml(item.category)}</span>
+                        <span class="news-title-text">${DudUtils.escapeHtml(item.title)}</span>
                     </div>
                     <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -117,23 +112,6 @@ function initScrollAnimations() {
 }
 
 // ========================================
-// ユーティリティ関数
-// ========================================
-
-function formatType(type) {
-    const labels = { article: '記事', youtube: 'YouTube' };
-    return labels[type] || type || '';
-}
-
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}.${month}.${day}`;
-}
-
-// ========================================
 // AOS（Animate On Scroll）スタイル
 // ========================================
 
@@ -163,5 +141,3 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-console.log('=== HOME.JS COMPLETE ===');

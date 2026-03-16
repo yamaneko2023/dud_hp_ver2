@@ -24,6 +24,32 @@
     </div>
 </section>
 
+<!-- 受賞バナーセクション -->
+<section class="award-banner-section">
+    <div class="container">
+        <div class="award-banner-content" data-aos="fade-up">
+            <div class="award-emblem-wrapper">
+                <img src="/img/100sen/emblem.png"
+                     alt="神奈川を代表する企業100選 2026-2027 エンブレム"
+                     class="award-emblem-img"
+                     loading="lazy">
+            </div>
+            <div class="award-text-wrapper">
+                <h3 class="award-title">「神奈川を代表する企業100選」に<br class="sp-only">選出されました</h3>
+                <p class="award-description">
+                    株式会社DIG-UP DATAは、地方創生メディア「Made In Local」が主催する
+                    「神奈川を代表する企業100選 2026-2027」に選出されました。
+                </p>
+                <a href="https://madeinlocal.jp/category/companies/kanagawa079"
+                   target="_blank" rel="noopener noreferrer"
+                   class="award-link">
+                    詳しく見る <span class="award-link-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- 2. ビジョンセクション（濃い紫背景） -->
 <section class="vision-section">
     <div class="container">
@@ -113,10 +139,6 @@
                 <h3 class="problem-title">小規模な開発案件だが<br>一歩ずつ効率化したい</h3>
                 <p class="problem-desc">Webサイト、簡易システム、データ分析など、小さな案件でも柔軟に対応。まずはお気軽にご相談ください。</p>
             </div>
-        </div>
-
-        <div class="section-cta">
-            <a href="/contact" class="btn-primary-large">まずは無料相談から始める</a>
         </div>
     </div>
 </section>
@@ -217,10 +239,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="section-cta">
-            <a href="#" class="btn-secondary-large">すべて見る</a>
-        </div>
     </div>
 </section>
 
@@ -242,7 +260,10 @@
                 <a href="/company" class="btn-primary-large">会社情報を見る</a>
             </div>
             <div class="company-image">
-                <img src="/img/home_company.png" alt="横浜みなとみらい - DIG-UP DATAオフィスエリア" class="company-photo" loading="lazy">
+                <picture>
+                    <source srcset="/img/home_company.webp" type="image/webp">
+                    <img src="/img/home_company.png" alt="横浜みなとみらい - DIG-UP DATAオフィスエリア" class="company-photo" loading="lazy">
+                </picture>
             </div>
         </div>
     </div>
@@ -262,7 +283,10 @@
         </div>
 
         <div class="recruit-image">
-            <img src="/img/home_team.png" alt="DIG-UP DATAのチーム" class="team-photo" loading="lazy">
+            <picture>
+                <source srcset="/img/home_team.webp" type="image/webp">
+                <img src="/img/home_team.png" alt="DIG-UP DATAのチーム" class="team-photo" loading="lazy">
+            </picture>
         </div>
 
         <div class="section-cta">
@@ -409,10 +433,8 @@
 </script>
 
 <!-- JavaScriptにデータを渡す -->
-<script>
-const announcements = <?php echo $announcements_json; ?>;
-const latestNews = <?php echo $tech_news_json; ?>;
-</script>
+<script type="application/json" id="announcements-data"><?php echo $announcements_json; ?></script>
+<script type="application/json" id="latest-news-data"><?php echo $tech_news_json; ?></script>
 
 </main>
 <!-- /メインコンテンツ -->

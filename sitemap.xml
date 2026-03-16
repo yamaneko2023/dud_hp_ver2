@@ -6,72 +6,80 @@
 
     <!-- ホームページ -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/home.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
     <!-- Our Vision -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/vision.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/vision</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <!-- Services -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/services.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/services</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <!-- Company -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/company.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/company</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Announcements -->
+    <url>
+        <loc>https://digup-data.co.jp/announcements</loc>
+        <lastmod>2026-03-12</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Careers -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/careers.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/careers</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Contact -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/contact.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/contact</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <!-- Privacy Policy -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/privacy.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/privacy</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <!-- Compliance Policy -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/compliance.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/compliance</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <!-- Recruit Privacy -->
     <url>
-        <loc>https://digup-data.co.jp/app_hp/public/recruit-privacy.php</loc>
-        <lastmod>2026-02-05</lastmod>
+        <loc>https://digup-data.co.jp/recruit-privacy</loc>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>

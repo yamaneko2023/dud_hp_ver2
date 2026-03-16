@@ -6,50 +6,16 @@ User-agent: *
 
 # クロール許可
 Allow: /
-Allow: /app_hp/public/
-Allow: /img/
-Allow: /css/
-Allow: /js/
 
-# クロール禁止（管理系ディレクトリ）
-Disallow: /app_hp/api/
-Disallow: /app_hp/config/
-Disallow: /app_hp/includes/
-Disallow: /app_hp/vendor/
+# クロール禁止（内部ディレクトリ）
+Disallow: /app/
 Disallow: /data/
+Disallow: /api/
 Disallow: /.git/
 Disallow: /.claude/
 
-# クロール禁止（特定ファイル）
-Disallow: /app_hp/public/thanks.php
-
-# Googlebot固有の設定
-User-agent: Googlebot
-Allow: /
-Allow: /app_hp/public/
-Allow: /img/
-Allow: /css/
-Allow: /js/
-Disallow: /app_hp/api/
-Disallow: /app_hp/config/
-Disallow: /app_hp/includes/
-Disallow: /app_hp/vendor/
-Disallow: /data/
-Disallow: /app_hp/public/thanks.php
-
-# Bingbot固有の設定
-User-agent: Bingbot
-Allow: /
-Allow: /app_hp/public/
-Allow: /img/
-Allow: /css/
-Allow: /js/
-Disallow: /app_hp/api/
-Disallow: /app_hp/config/
-Disallow: /app_hp/includes/
-Disallow: /app_hp/vendor/
-Disallow: /data/
-Disallow: /app_hp/public/thanks.php
+# クロール禁止（特定ページ）
+Disallow: /thanks
 
 # サイトマップの場所
 Sitemap: https://digup-data.co.jp/sitemap.xml

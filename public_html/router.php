@@ -8,7 +8,7 @@
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // 静的ファイルはそのまま配信
-$staticExtensions = ['css', 'js', 'png', 'jpg', 'jpeg', 'gif', 'svg', 'mp4', 'webm', 'ico', 'woff', 'woff2', 'ttf'];
+$staticExtensions = ['css', 'js', 'png', 'jpg', 'jpeg', 'gif', 'svg', 'webp', 'mp4', 'webm', 'ico', 'woff', 'woff2', 'ttf'];
 $ext = pathinfo($uri, PATHINFO_EXTENSION);
 if (in_array($ext, $staticExtensions) && file_exists(__DIR__ . $uri)) {
     return false; // ビルトインサーバーにファイル配信を任せる

@@ -28,7 +28,8 @@ function getMetaDescription($pageKey) {
         'thanks' => 'お問い合わせありがとうございます。担当者より折り返しご連絡いたします。株式会社DIG-UP DATA',
         'privacy' => '株式会社DIG-UP DATAのプライバシーポリシー。個人情報の取扱い、利用目的、第三者提供、開示請求について説明しています。',
         'compliance' => '株式会社DIG-UP DATAのコンプライアンスポリシー。法令遵守、企業倫理、情報セキュリティに関する基本方針を定めています。',
-        'recruit-privacy' => 'DIG-UP DATAの採用活動における個人情報の取扱いについて。応募者情報の利用目的、保管期間、第三者提供について説明しています。'
+        'recruit-privacy' => 'DIG-UP DATAの採用活動における個人情報の取扱いについて。応募者情報の利用目的、保管期間、第三者提供について説明しています。',
+        'announcements' => '株式会社DIG-UP DATAのお知らせ一覧。「神奈川を代表する企業100選 2026-2027」選出情報やプレスリリース、会社からのお知らせをご覧いただけます。'
     ];
 
     return $descriptions[$pageKey] ?? COMPANY_NAME_JP . ' - ' . COMPANY_DOMAIN;
@@ -50,7 +51,8 @@ function getMetaKeywords($pageKey) {
         'contact' => 'お問い合わせ,相談,見積もり,AI開発相談,DX推進相談,データ分析相談',
         'privacy' => 'プライバシーポリシー,個人情報保護,情報セキュリティ',
         'compliance' => 'コンプライアンス,法令遵守,企業倫理,情報セキュリティ',
-        'recruit-privacy' => '採用,個人情報,プライバシーポリシー,応募者情報'
+        'recruit-privacy' => '採用,個人情報,プライバシーポリシー,応募者情報',
+        'announcements' => 'お知らせ,神奈川を代表する企業100選,プレスリリース,DIG-UP DATA,ニュース'
     ];
 
     return $keywords[$pageKey] ?? COMPANY_NAME_JP;
@@ -76,7 +78,8 @@ function getOgpImage($pageKey) {
         'thanks' => $baseUrl . '/img/home_company.png',
         'privacy' => $baseUrl . '/img/company_logo.svg',
         'compliance' => $baseUrl . '/img/company_logo.svg',
-        'recruit-privacy' => $baseUrl . '/img/company_logo.svg'
+        'recruit-privacy' => $baseUrl . '/img/company_logo.svg',
+        'announcements' => $baseUrl . '/img/100sen/emblem_horizontal.png'
     ];
 
     return $images[$pageKey] ?? ($baseUrl . '/img/home_company.png');
@@ -101,7 +104,8 @@ function getCanonicalUrl($pageKey) {
         'thanks' => $baseUrl . '/thanks',
         'privacy' => $baseUrl . '/privacy',
         'compliance' => $baseUrl . '/compliance',
-        'recruit-privacy' => $baseUrl . '/recruit-privacy'
+        'recruit-privacy' => $baseUrl . '/recruit-privacy',
+        'announcements' => $baseUrl . '/announcements'
     ];
 
     return $urls[$pageKey] ?? $baseUrl;
@@ -126,7 +130,7 @@ function getOgpType($pageKey) {
  */
 function getTwitterCardType($pageKey) {
     // 画像を大きく表示したいページはsummary_large_image
-    $largeImagePages = ['home', 'vision', 'services', 'careers'];
+    $largeImagePages = ['home', 'vision', 'services', 'careers', 'announcements'];
 
     return in_array($pageKey, $largeImagePages) ? 'summary_large_image' : 'summary';
 }
@@ -175,6 +179,10 @@ function getBreadcrumbs($pageKey) {
         'recruit-privacy' => [
             ['name' => 'Home', 'url' => $baseUrl . '/'],
             ['name' => 'Recruit Privacy', 'url' => $baseUrl . '/recruit-privacy']
+        ],
+        'announcements' => [
+            ['name' => 'Home', 'url' => $baseUrl . '/'],
+            ['name' => 'Announcements', 'url' => $baseUrl . '/announcements']
         ],
         'thanks' => [
             ['name' => 'Home', 'url' => $baseUrl . '/'],

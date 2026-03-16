@@ -36,6 +36,8 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
     <meta property="og:type" content="<?php echo $ogp_type; ?>">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8'); ?>">
     <meta property="og:image" content="<?php echo htmlspecialchars($ogp_image, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="<?php echo COMPANY_NAME_JP; ?>">
     <meta property="og:locale" content="ja_JP">
 
@@ -49,6 +51,7 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
     <link rel="icon" type="image/svg+xml" href="/img/company_logo.svg">
 
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/variables.css">
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- Google Fonts -->
@@ -71,19 +74,31 @@ $page_title_text = isset($page_title) ? $page_title : '株式会社DIG-UP DATA';
                 <img src="/img/company_logo.svg" alt="DIG-UP DATA Inc." loading="eager">
                 <span class="company-name">DIG-UP DATA Inc.</span>
             </a>
-            <ul class="nav-menu">
+            <a href="https://madeinlocal.jp/category/companies/kanagawa079"
+               target="_blank" rel="noopener noreferrer"
+               class="navbar-award-badge">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/img/100sen/emblem.png">
+                    <img src="/img/100sen/emblem_horizontal.png"
+                         alt="神奈川100選 2026-2027"
+                         class="navbar-award-emblem">
+                </picture>
+                <span class="navbar-award-text">に選ばれました</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/vision">Our Vision</a></li>
                 <li><a href="/services">Services</a></li>
                 <li><a href="/company">Company</a></li>
+                <li><a href="/announcements">News</a></li>
                 <li><a href="/careers">Careers</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="メニューを開く">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
