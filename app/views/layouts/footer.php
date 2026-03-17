@@ -87,30 +87,8 @@
     <script src="/js/home.js"></script>
     <?php endif; ?>
 
-    <!-- Dify Chatbot -->
-    <script>
-        window.difyChatbotConfig = {
-            token: 'OkBZ34JfRUjvuznX',
-            isDev: false,
-            baseUrl: 'https://udify.app',
-            draggable: false
-        }
-        console.log('Dify config loaded:', window.difyChatbotConfig);
-    </script>
-    <script
-        src="https://udify.app/embed.min.js"
-        id="OkBZ34JfRUjvuznX"
-        onload="console.log('Dify script loaded successfully')"
-        onerror="console.error('Failed to load Dify script')">
-    </script>
-    <style>
-        #dify-chatbot-bubble-button {
-            background-color: #1C64F2 !important;
-        }
-        #dify-chatbot-bubble-window {
-            width: 24rem !important;
-            height: 40rem !important;
-        }
-    </style>
+    <!-- Chatbot Widget -->
+    <link rel="stylesheet" href="/css/chatbot.css">
+    <script src="/js/chatbot.js" defer></script>
 </body>
 </html>

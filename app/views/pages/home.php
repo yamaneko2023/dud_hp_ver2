@@ -28,17 +28,25 @@
 <section class="award-banner-section">
     <div class="container">
         <div class="award-banner-content" data-aos="fade-up">
+            <!-- 上部: 横型エンブレム画像 -->
             <div class="award-emblem-wrapper">
-                <img src="/img/100sen/emblem.png"
+                <img src="/img/100sen/emblem_horizontal_white.png"
                      alt="神奈川を代表する企業100選 2026-2027 エンブレム"
                      class="award-emblem-img"
                      loading="lazy">
             </div>
+            <!-- 下部: テキスト内容 -->
             <div class="award-text-wrapper">
-                <h3 class="award-title">「神奈川を代表する企業100選」に<br class="sp-only">選出されました</h3>
+                <h3 class="award-title">選出されました</h3>
                 <p class="award-description">
-                    株式会社DIG-UP DATAは、地方創生メディア「Made In Local」が主催する
+                    株式会社DIG-UP DATAは、地方創生メディア「Made In Local」が主催する<BR>
                     「神奈川を代表する企業100選 2026-2027」に選出されました。
+                </p>
+                <p class="award-description">
+                    本選定は、地域経済への貢献や成長性、独自性などの観点から
+                    神奈川県内の優れた企業を選出するものです。
+                    当社はAI・データ分析・DXコンサルティングを通じた
+                    企業の課題解決と地域社会への貢献が評価されました。
                 </p>
                 <a href="https://madeinlocal.jp/category/companies/kanagawa079"
                    target="_blank" rel="noopener noreferrer"
