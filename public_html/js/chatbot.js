@@ -89,6 +89,11 @@
             '    <div class="chatbot-header-title">DIG-UP DATA</div>' +
             '    <div class="chatbot-header-subtitle">AIアシスタント</div>' +
             '  </div>' +
+            '  <button class="chatbot-header-close" aria-label="チャットを閉じる">' +
+            '    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+            '      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>' +
+            '    </svg>' +
+            '  </button>' +
             '</div>' +
             '<div class="chatbot-messages"></div>' +
             '<div class="chatbot-input-area">' +
@@ -316,6 +321,18 @@
                 textarea.focus();
             }
             isOpen = !isOpen;
+        });
+
+        // ヘッダー閉じるボタン
+        var headerClose = win.querySelector('.chatbot-header-close');
+        headerClose.addEventListener('click', function () {
+            if (isOpen) {
+                win.classList.remove('is-open');
+                setTimeout(function () { win.classList.remove('is-visible'); }, 300);
+                bubble.classList.remove('is-open');
+                bubble.setAttribute('aria-label', 'チャットを開く');
+                isOpen = false;
+            }
         });
 
         // 送信

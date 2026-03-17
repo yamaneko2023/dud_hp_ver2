@@ -162,6 +162,30 @@
     line-height: var(--line-height-tight);
 }
 
+.chatbot-header-close {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-full);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--white);
+    transition: background var(--transition-fast) ease;
+}
+
+.chatbot-header-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.chatbot-header-close svg {
+    width: 18px;
+    height: 18px;
+}
+
 /* ===== メッセージエリア ===== */
 .chatbot-messages {
     flex: 1;
