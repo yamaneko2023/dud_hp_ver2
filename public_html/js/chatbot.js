@@ -340,9 +340,9 @@
             sendMessage(textarea.value);
         });
 
-        // Enter送信 / Shift+Enter改行
+        // Enter送信 / Shift+Enter改行 / IME変換中は無視
         textarea.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
+            if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
                 e.preventDefault();
                 sendMessage(textarea.value);
             }
