@@ -88,6 +88,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // ページトップにスクロール
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // GA4: 確認画面遷移イベント
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'event': 'form_confirm'});
+
             console.log('確認画面に遷移しました');
         } catch (error) {
             console.error('確認画面への遷移中にエラーが発生しました:', error);
@@ -150,6 +155,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const result = await response.json();
 
             if (result.success) {
+                // GA4: 送信成功イベント（コンバージョン）
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({'event': 'form_submit'});
+
                 // 送信成功 - 完了ページへリダイレクト
                 console.log('送信成功');
                 window.location.href = '/thanks';
@@ -166,6 +175,16 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = false;
             backBtn.disabled = false;
             loadingMessage.style.display = 'none';
+        }
+    });
+
+    // GA4: フォーム初回入力イベント（1回だけ発火）
+    var formStartFired = false;
+    contactForm.addEventListener('input', function() {
+        if (!formStartFired) {
+            formStartFired = true;
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'event': 'form_start'});
         }
     });
 

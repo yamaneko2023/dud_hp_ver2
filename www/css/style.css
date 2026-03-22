@@ -5836,6 +5836,128 @@ select:focus-visible,
     border-radius: 4px;
 }
 
+/* ========================================
+   Cookie同意バナー
+   ======================================== */
+
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background: rgba(15, 23, 42, 0.97);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 20px 0;
+}
+
+.cookie-consent-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.cookie-consent-text {
+    flex: 1;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.cookie-consent-text a {
+    color: #818cf8;
+    text-decoration: underline;
+}
+
+.cookie-consent-text a:hover {
+    color: #a5b4fc;
+}
+
+.cookie-consent-buttons {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.cookie-consent-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.cookie-consent-btn-accept {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
+}
+
+.cookie-consent-btn-accept:hover {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.cookie-consent-btn-reject {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-consent-btn-reject:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Cookie同意バナー - タブレット */
+@media (max-width: 768px) {
+    .cookie-consent-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .cookie-consent-text {
+        font-size: 0.85rem;
+    }
+
+    .cookie-consent-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Cookie同意バナー - モバイル */
+@media (max-width: 480px) {
+    .cookie-consent-banner {
+        padding: 16px 0;
+    }
+
+    .cookie-consent-inner {
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    .cookie-consent-text {
+        font-size: 0.8rem;
+    }
+
+    .cookie-consent-btn {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+
 /* モーション軽減 */
 @media (prefers-reduced-motion: reduce) {
     *,

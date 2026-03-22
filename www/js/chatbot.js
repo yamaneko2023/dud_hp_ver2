@@ -203,6 +203,9 @@
         sendBtn.disabled = true;
 
         appendMessage('user', text);
+        // GA4: ユーザーメッセージ送信イベント
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({'event': 'chatbot_message_sent'});
         showTyping();
         saveState();
 
@@ -263,8 +266,14 @@
                         if (data.conversation_id) {
                             conversationId = data.conversation_id;
                         }
+                        // GA4: Bot応答完了イベント
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({'event': 'chatbot_response_received'});
                     } else if (data.event === 'error') {
                         appendError(data.message || 'エラーが発生しました');
+                        // GA4: SSEエラーイベント
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({'event': 'chatbot_error'});
                     }
                 }
             }
@@ -277,6 +286,9 @@
         } catch (err) {
             removeTyping();
             appendError(err.message || '通信エラーが発生しました');
+            // GA4: 通信エラーイベント
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'event': 'chatbot_error'});
         } finally {
             isStreaming = false;
             sendBtn.disabled = false;
@@ -318,6 +330,9 @@
                 });
                 bubble.classList.add('is-open');
                 bubble.setAttribute('aria-label', 'チャットを閉じる');
+                // GA4: チャットボット開封イベント
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({'event': 'chatbot_open'});
                 textarea.focus();
             }
             isOpen = !isOpen;
