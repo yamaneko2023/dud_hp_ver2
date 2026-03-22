@@ -171,6 +171,28 @@ function validateFormData($data) {
 }
 
 /**
+ * チャットボット用レート制限チェック
+ */
+function checkChatbotRateLimit() {
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $currentTime = time();
+
+    if (!isset($_SESSION['chatbot_last_time'])) {
+        $_SESSION['chatbot_last_time'] = [];
+    }
+
+    if (isset($_SESSION['chatbot_last_time'][$ip])) {
+        $timeDiff = $currentTime - $_SESSION['chatbot_last_time'][$ip];
+        if ($timeDiff < CHATBOT_RATE_LIMIT_SECONDS) {
+            return false;
+        }
+    }
+
+    $_SESSION['chatbot_last_time'][$ip] = $currentTime;
+    return true;
+}
+
+/**
  * JSONレスポンスの送信
  */
 function sendJsonResponse($success, $message, $data = []) {
