@@ -38,7 +38,7 @@ define('ALLOWED_REFERERS', [
 ]);
 
 // エラーログの出力先
-define('ERROR_LOG_FILE', __DIR__ . '/../../logs/error.log');
+define('ERROR_LOG_FILE', __DIR__ . '/../../../logs/hp/error.log');
 
 // メール送信モード（'mail' または 'smtp'）
 define('MAIL_MODE', 'mail'); // PHP mail()関数を使用

@@ -8,7 +8,7 @@ mb_language('Japanese');
 mb_internal_encoding('UTF-8');
 
 // 非公開ディレクトリのパス定義
-define('APP_DIR', __DIR__ . '/../../app');
+define('APP_DIR', __DIR__ . '/../../app/hp');
 
 require_once APP_DIR . '/config/cfg_app.php';
 require_once APP_DIR . '/config/cfg_security.php';
