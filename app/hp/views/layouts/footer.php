@@ -79,6 +79,59 @@
     }
     </script>
 
+    <?php if (ANALYTICS_ENABLED && COOKIE_CONSENT_ENABLED): ?>
+    <!-- Cookie同意バナー -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner" style="display:none;">
+        <div class="cookie-consent-inner">
+            <p class="cookie-consent-text">
+                当サイトでは、サービス向上やアクセス解析のためにCookieを使用しています。
+                詳しくは<a href="/privacy">プライバシーポリシー</a>をご確認ください。
+            </p>
+            <div class="cookie-consent-buttons">
+                <button id="cookie-consent-accept" class="cookie-consent-btn cookie-consent-btn-accept">同意する</button>
+                <button id="cookie-consent-reject" class="cookie-consent-btn cookie-consent-btn-reject">拒否する</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function() {
+        var COOKIE_NAME = '<?php echo COOKIE_CONSENT_COOKIE_NAME; ?>';
+        var EXPIRY_DAYS = <?php echo COOKIE_CONSENT_EXPIRY_DAYS; ?>;
+
+        function getCookie(name) {
+            var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? match[2] : null;
+        }
+
+        function setCookie(name, value, days) {
+            var expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + '=' + value + '; expires=' + expires + '; path=/; SameSite=Lax';
+        }
+
+        var consent = getCookie(COOKIE_NAME);
+
+        if (consent === 'accepted') {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'event': 'cookie_consent_update', 'cookie_consent': 'accepted'});
+        } else if (!consent) {
+            document.getElementById('cookie-consent-banner').style.display = 'block';
+        }
+
+        document.getElementById('cookie-consent-accept').addEventListener('click', function() {
+            setCookie(COOKIE_NAME, 'accepted', EXPIRY_DAYS);
+            document.getElementById('cookie-consent-banner').style.display = 'none';
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'event': 'cookie_consent_update', 'cookie_consent': 'accepted'});
+        });
+
+        document.getElementById('cookie-consent-reject').addEventListener('click', function() {
+            setCookie(COOKIE_NAME, 'rejected', EXPIRY_DAYS);
+            document.getElementById('cookie-consent-banner').style.display = 'none';
+        });
+    })();
+    </script>
+    <?php endif; ?>
+
     <script src="/js/utils.js"></script>
     <script src="/js/script.js"></script>
 

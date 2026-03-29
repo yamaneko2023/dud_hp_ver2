@@ -70,8 +70,20 @@
                 </div>
 
                 <div class="policy-item">
-                    <h2>7. Cookieの使用について</h2>
-                    <p>当社のウェブサイトでは、サービスの利便性向上や利用状況の分析のため、Cookieを使用することがあります。Cookieとは、ウェブサイトがお客様のコンピューター内に一時的にデータを保存する仕組みです。お客様は、ブラウザの設定によりCookieの受け取りを拒否することができますが、その場合、一部のサービスが正常に機能しない可能性があります。</p>
+                    <h2>7. Cookieおよびアクセス解析ツールの使用について</h2>
+                    <p>当社のウェブサイトでは、サービスの利便性向上やアクセス状況の分析のため、以下のツールを使用しています。</p>
+                    <ul>
+                        <li><strong>Google Analytics 4（GA4）</strong>：ウェブサイトの訪問者数、流入元、ページ閲覧状況等のアクセスデータを収集・分析します。</li>
+                        <li><strong>Google Tag Manager（GTM）</strong>：上記を含む各種計測タグを一元管理するために使用します。</li>
+                        <li><strong>Microsoft Clarity</strong>：ヒートマップやセッション録画を通じて、ユーザーのサイト利用状況を分析します。</li>
+                    </ul>
+                    <p>これらのツールはCookieを使用してデータを収集しますが、個人を特定する情報は含まれません。当サイトでは初回訪問時にCookie同意バナーを表示し、お客様の同意を得た場合にのみこれらのツールによるデータ収集を行います。同意いただけない場合、計測タグは発火しません。</p>
+                    <p>お客様は、ブラウザの設定によりCookieの受け取りを拒否することもできますが、その場合、一部のサービスが正常に機能しない可能性があります。</p>
+                    <p>各ツールのプライバシーポリシーについては、以下をご参照ください。</p>
+                    <ul>
+                        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google プライバシーポリシー</a></li>
+                        <li><a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft プライバシーステートメント</a></li>
+                    </ul>
                 </div>
 
                 <div class="policy-item">
@@ -100,7 +112,7 @@
 
                 <div class="policy-date">
                     <p>制定日：2023年1月4日</p>
-                    <p>最終更新日：2023年1月4日</p>
+                    <p>最終更新日：2026年3月22日</p>
                 </div>
             </div>
         </div>
