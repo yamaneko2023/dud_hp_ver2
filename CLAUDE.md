@@ -265,6 +265,48 @@ Before deploying changes:
 
 **CSS Refactor**: Large project requiring dedicated test environment, screenshot comparison tools, and 6-8 week timeline. See `CSS_REFACTORING_PLAN.md`.
 
+## Deployment (さくらサーバー)
+
+**ホスティング**: さくらインターネット レンタルサーバー
+**デプロイツール**: 別リポジトリ `dud_hp_tool_deploy`（Private）
+**ローカルパス**: `dud_work/dud_hp_tool_deploy/`（`dud_hp_ver2` と同階層）
+
+### デプロイ手順
+
+1. `dud_hp_ver2` の `main` ブランチに変更をマージ
+2. GitHub の `dud_hp_tool_deploy` リポジトリ → **Actions** → **"Deploy to Sakura Server"**
+3. **Run workflow** をクリック:
+   - **target**: `hp`（コーポレートサイト） / `news`（ニュースアグリゲーター） / `both`
+   - **dry_run**: `true` でテスト実行（実際の同期なし）、`false` で本番デプロイ
+
+### CLI でのデプロイ
+
+```bash
+# ドライラン（テスト）
+gh workflow run deploy.yml -f target=hp -f dry_run=true -R yamaneko2023/dud_hp_tool_deploy
+
+# 本番デプロイ
+gh workflow run deploy.yml -f target=hp -f dry_run=false -R yamaneko2023/dud_hp_tool_deploy
+```
+
+### デプロイの仕組み
+
+GitHub Actions が SSH でさくらサーバーに接続し、`deploy.sh` を実行。サーバー上の `~/repos/dud_hp_ver2/` を `git pull` した後、rsync で公開ディレクトリへ同期する。
+
+| リポジトリ | サーバー | 備考 |
+|-----------|---------|------|
+| `www/` | `~/www/` | `.htaccess` 除外、`--delete` |
+| `app/hp/` | `~/app/hp/` | `--delete` |
+| `data/hp/` | `~/data/hp/` | `tech_news.json` 除外 |
+
+### GitHub Secrets（`dud_hp_tool_deploy` に設定）
+
+| シークレット | 説明 |
+|------------|------|
+| `SSH_HOST` | さくらサーバーホスト名 |
+| `SSH_USER` | SSH ユーザー名 |
+| `SSH_PRIVATE_KEY` | SSH 秘密鍵 |
+
 ## Additional Documentation
 
 - `README.md`: Comprehensive project overview & feature documentation
