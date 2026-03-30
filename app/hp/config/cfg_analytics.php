@@ -8,10 +8,10 @@
 define('ANALYTICS_ENABLED', true);
 
 // Google Tag Manager コンテナID（要置換）
-define('GTM_CONTAINER_ID', 'GTM-XXXXXXX');
+define('GTM_CONTAINER_ID', 'GTM-PXTMHGDF');
 
 // Google Search Console サイト所有権確認コード（要置換）
-define('GSC_VERIFICATION_CODE', 'XXXXXXXXXXXX');
+define('GSC_VERIFICATION_CODE', '8F24bgJgzoeXdGlGj-iHsLj4aVCEjCL9ozp8CUDHHhQ');
 
 // Cookie同意バナー
 define('COOKIE_CONSENT_ENABLED', true);
